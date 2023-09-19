@@ -1,0 +1,1063 @@
+{'suppress_draws': False, 'lang': 'DEFAULT', 'gameType': '169', 'lobby': '0', 'players': [{'name': 'sb神医', 'rank': '七段', 'sex': 'M', 'rate': 2089.79, 'connected': True
+'name': 'cobehope', 'rank': '七段', 'sex': 'M', 'rate': 2151.31, 'connected': True
+'name': '幻霊', 'rank': '七段', 'sex': 'F', 'rate': 2154.56, 'connected': True
+'name': '†Aqua†', 'rank': '九段', 'sex': 'M', 'rate': 2226.77, 'connected': True}], 'rounds': [{'dealer': 0, 'hands': [['4s0', '9m1', '9p0', '8p1', '9m0', '4m2', 'ew3', '2m0', '8p0', '3m3', '6p2', '2m2', '9m2'], ['9s0', '8m0', '5s1', '8p2', '7m1', 'gd3', '2p0', '7m2', '1m0', '8p3', '6m2', 'gd1', '6s3'], ['1m3', '1s1', '1p0', '5p0', '9p2', '8m2', '3p0', 'ww3', '1s0', '9p1', 'wd1', '2s1', '8m1'], ['sw2', 'ww2', '3m0', '8m3', '2p2', 'rd2', '9s1', '3s2', '4p0', '4m0', 'sw3', '4s3', 'nw0']], 'round': ['東1', 0, 0], 'agari': [{'type': 'RON', 'player': 0, 'hand': ['4s0', '4s1', '4s2', '2p1', '3p2', '4p3', '8p0', '8p1', '2m0', '3m3', '4m2', '9m0', '9m1', '9m2'], 'fu': 40, 'points': 2000, 'limit': '', 'dora': ['ew1'], 'machi': ['4s2'], 'melds': [], 'closed': True, 'uradora': [], 'fromPlayer': 3, 'yaku': [['Riichi', 1], ['Uradora', 0]], 'yakuman': []}], 'events': [{'type': 'Dora', 'tile': 'ew1'
+'type': 'Draw', 'tile': 'rd0', 'player': 0
+'type': 'Discard', 'tile': 'rd0', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': 'sw0', 'player': 1
+'type': 'Discard', 'tile': '9s0', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '8s2', 'player': 2
+'type': 'Discard', 'tile': 'wd1', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '4p2', 'player': 3
+'type': 'Discard', 'tile': 'ww2', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '3p2', 'player': 0
+'type': 'Discard', 'tile': 'ew3', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '7p0', 'player': 1
+'type': 'Discard', 'tile': '1m0', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '7p3', 'player': 2
+'type': 'Discard', 'tile': 'ww3', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': 'ew2', 'player': 3
+'type': 'Discard', 'tile': '9s1', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '2p1', 'player': 0
+'type': 'Discard', 'tile': '9p0', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '5p2', 'player': 1
+'type': 'Discard', 'tile': '2p0', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '9m3', 'player': 2
+'type': 'Discard', 'tile': '8s2', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '5s0', 'player': 3
+'type': 'Discard', 'tile': 'ew2', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': 'rd3', 'player': 0
+'type': 'Discard', 'tile': 'rd3', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': 'ew0', 'player': 1
+'type': 'Discard', 'tile': 'ew0', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': 'rd1', 'player': 2
+'type': 'Discard', 'tile': 'rd1', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '9s2', 'player': 3
+'type': 'Discard', 'tile': '9s2', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '4p3', 'player': 0
+'type': 'Discard', 'tile': '2m2', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '6s1', 'player': 1
+'type': 'Discard', 'tile': '6s1', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '1s3', 'player': 2
+'type': 'Discard', 'tile': '8m2', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '6m1', 'player': 3
+'type': 'Discard', 'tile': 'rd2', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '1m2', 'player': 0
+'type': 'Discard', 'tile': '1m2', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '1p3', 'player': 1
+'type': 'Discard', 'tile': '1p3', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '7p2', 'player': 2
+'type': 'Discard', 'tile': '1m3', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': 'wd3', 'player': 3
+'type': 'Discard', 'tile': 'wd3', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '6s0', 'player': 0
+'type': 'Discard', 'tile': '6p2', 'player': 0, 'connected': True
+'type': 'Call', 'meld': {'fromPlayer': 3, 'type': 'chi', 'called': 1, 'tiles': ['5p2', '6p2', '7p0']}, 'player': 1
+'type': 'Discard', 'tile': '7m1', 'player': 1, 'connected': True
+'type': 'Call', 'meld': {'fromPlayer': 3, 'type': 'chi', 'called': 0, 'tiles': ['7m1', '8m1', '9m3']}, 'player': 2
+'type': 'Discard', 'tile': '5p0', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '1m1', 'player': 3
+'type': 'Discard', 'tile': 'nw0', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '4s1', 'player': 0
+'type': 'Discard', 'tile': '6s0', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '8s0', 'player': 1
+'type': 'Discard', 'tile': 'gd3', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': 'wd2', 'player': 2
+'type': 'Discard', 'tile': 'wd2', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '4p1', 'player': 3
+'type': 'Discard', 'tile': '1m1', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': 'gd2', 'player': 0
+'type': 'Discard', 'tile': 'gd2', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '1p1', 'player': 1
+'type': 'Discard', 'tile': 'gd1', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '7m0', 'player': 2
+'type': 'Discard', 'tile': '9p2', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '2m1', 'player': 3
+'type': 'Discard', 'tile': '2p2', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '3s3', 'player': 0
+'type': 'Discard', 'tile': '3s3', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '5s2', 'player': 1
+'type': 'Discard', 'tile': '6s3', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '5m3', 'player': 2
+'type': 'Discard', 'tile': '9p1', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '6p0', 'player': 3
+'type': 'Discard', 'tile': '6p0', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': 'ww0', 'player': 0
+'type': 'Discard', 'tile': 'ww0', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': 'sw1', 'player': 1
+'type': 'Discard', 'tile': '8s0', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '7p1', 'player': 2
+'type': 'Discard', 'tile': '3p0', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': 'nw2', 'player': 3
+'type': 'Discard', 'tile': 'nw2', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '3m1', 'player': 0
+'type': 'Discard', 'tile': '3m1', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '5m2', 'player': 1
+'type': 'Discard', 'tile': 'sw1', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '7m3', 'player': 2
+'type': 'Discard', 'tile': '7p3', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '4s2', 'player': 3
+'type': 'Discard', 'tile': '4s2', 'player': 3, 'connected': True}], 'ryuukyoku': False, 'ryuukyoku_tenpai': None, 'reaches': [0, 3], 'reach_turns': [8, 9], 'turns': [12, 12, 12, 12], 'deltas': [40, 0, 0, -20]
+'dealer': 0, 'hands': [['3m1', '4s2', 'ww1', '8p3', 'wd2', '6p3', '4s0', '2s1', '2s3', '7p2', '6s0', '3s0', '6s2'], ['1s1', 'gd2', '7s0', '9p1', 'sw0', 'nw0', '3s3', 'ew1', '7m0', '7p0', '2p3', 'ew0', '3s1'], ['3m0', '5m1', '6s3', '9s3', '4p3', 'ww3', 'nw1', '9m1', '6m0', 'ew3', '7s1', '9p0', '7m1'], ['1m3', '4s3', '9s0', 'nw2', 'rd3', '7p1', '2m0', '2m1', '8m3', '1m2', '3p0', '6s1', '4p1']], 'round': ['東1', 1, 0], 'agari': [{'type': 'RON', 'player': 2, 'hand': ['6s3', '7s1', '8s0', '5p2', '5p3', '5m1', '5m2', '6m0', '6m1', '7m1', '7m2'], 'fu': 30, 'points': 1000, 'limit': '', 'dora': ['2p2'], 'machi': ['7m2'], 'melds': [{'fromPlayer': 2, 'called': 1, 'type': 'pon', 'tiles': ['3m0', '3m1', '3m3']}], 'closed': False, 'uradora': [], 'fromPlayer': 0, 'yaku': [['Tanyao', 1]], 'yakuman': []}], 'events': [{'type': 'Dora', 'tile': '2p2'
+'type': 'Draw', 'tile': 'rd0', 'player': 0
+'type': 'Discard', 'tile': 'ww1', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '1m1', 'player': 1
+'type': 'Discard', 'tile': 'nw0', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '5m2', 'player': 2
+'type': 'Discard', 'tile': 'nw1', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '8m0', 'player': 3
+'type': 'Discard', 'tile': '9s0', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': 'gd3', 'player': 0
+'type': 'Discard', 'tile': 'wd2', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '8p1', 'player': 1
+'type': 'Discard', 'tile': '1m1', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '5p3', 'player': 2
+'type': 'Discard', 'tile': 'ww3', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '5p0', 'player': 3
+'type': 'Discard', 'tile': 'nw2', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '1p3', 'player': 0
+'type': 'Discard', 'tile': '1p3', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '1p2', 'player': 1
+'type': 'Discard', 'tile': 'gd2', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '9m2', 'player': 2
+'type': 'Discard', 'tile': '9p0', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': 'gd1', 'player': 3
+'type': 'Discard', 'tile': 'gd1', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '5s2', 'player': 0
+'type': 'Discard', 'tile': 'gd3', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': 'sw2', 'player': 1
+'type': 'Discard', 'tile': '7m0', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '3m3', 'player': 2
+'type': 'Discard', 'tile': '9s3', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': 'ww0', 'player': 3
+'type': 'Discard', 'tile': 'ww0', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '1p0', 'player': 0
+'type': 'Discard', 'tile': '1p0', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '6p1', 'player': 1
+'type': 'Discard', 'tile': '7s0', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '5p2', 'player': 2
+'type': 'Discard', 'tile': 'ew3', 'player': 2, 'connected': True
+'type': 'Call', 'meld': {'fromPlayer': 1, 'called': 2, 'type': 'pon', 'tiles': ['ew0', 'ew1', 'ew3']}, 'player': 1
+'type': 'Discard', 'tile': '1s1', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '6m1', 'player': 2
+'type': 'Discard', 'tile': '9m2', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '6m3', 'player': 3
+'type': 'Discard', 'tile': 'rd3', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '7m2', 'player': 0
+'type': 'Discard', 'tile': 'rd0', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '4s1', 'player': 1
+'type': 'Discard', 'tile': '3s3', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '8s0', 'player': 2
+'type': 'Discard', 'tile': '9m1', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': 'rd2', 'player': 3
+'type': 'Discard', 'tile': 'rd2', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '3p2', 'player': 0
+'type': 'Discard', 'tile': '3m1', 'player': 0, 'connected': True
+'type': 'Call', 'meld': {'fromPlayer': 2, 'called': 1, 'type': 'pon', 'tiles': ['3m0', '3m1', '3m3']}, 'player': 2
+'type': 'Discard', 'tile': '4p3', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '2m3', 'player': 3
+'type': 'Discard', 'tile': '1m3', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '1s2', 'player': 0
+'type': 'Discard', 'tile': '7m2', 'player': 0, 'connected': True}], 'ryuukyoku': False, 'ryuukyoku_tenpai': None, 'reaches': [], 'reach_turns': [], 'turns': [8, 7, 8, 7], 'deltas': [-13, 0, 13, 0]
+'dealer': 1, 'hands': [['nw0', '3s1', '4m0', '4p2', '7m3', '4m2', '4s0', 'gd1', 'ww1', '5p1', '8p2', '9s1', '5s3'], ['9s3', '7m1', '7p0', '2s0', 'nw1', '6p1', '2p1', '1s3', '2m0', '1s0', '2s1', '7p2', '8m3'], ['ew1', '3m1', '1p3', '3m3', '8p3', '8s1', '1m3', '2s3', '6p3', '1s2', 'rd2', '9m0', '7s2'], ['ew0', '2p2', 'wd3', '8p0', '7s0', '2p0', '1s1', 'rd0', '8p1', '4s2', '3m2', '9m2', '7s1']], 'round': ['東2', 0, 0], 'agari': [{'type': 'RON', 'player': 1, 'hand': ['1s0', '2s0', '3s2', '9s0', '9s3', '4p1', '5p2', '6p1', '7p0', '7p2', '7p3', '6m2', '7m1', '8m3'], 'fu': 40, 'points': 3900, 'limit': '', 'dora': ['4s1'], 'machi': ['5p2'], 'melds': [], 'closed': True, 'uradora': [], 'fromPlayer': 0, 'yaku': [['Riichi', 1], ['Uradora', 1]], 'yakuman': []}], 'events': [{'type': 'Dora', 'tile': '4s1'
+'type': 'Draw', 'tile': '9s0', 'player': 1
+'type': 'Discard', 'tile': 'nw1', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': 'rd3', 'player': 2
+'type': 'Discard', 'tile': '1p3', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '8s3', 'player': 3
+'type': 'Discard', 'tile': '1s1', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '5s2', 'player': 0
+'type': 'Discard', 'tile': 'ww1', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '7p3', 'player': 1
+'type': 'Discard', 'tile': '2m0', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': 'gd0', 'player': 2
+'type': 'Discard', 'tile': '9m0', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '1p2', 'player': 3
+'type': 'Discard', 'tile': '9m2', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': 'sw1', 'player': 0
+'type': 'Discard', 'tile': '9s1', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '3s2', 'player': 1
+'type': 'Discard', 'tile': '2p1', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': 'ew3', 'player': 2
+'type': 'Discard', 'tile': 'gd0', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': 'sw3', 'player': 3
+'type': 'Discard', 'tile': 'sw3', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '4s3', 'player': 0
+'type': 'Discard', 'tile': 'sw1', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '2m2', 'player': 1
+'type': 'Discard', 'tile': '2m2', 'player': 1, 'connected': True
+'type': 'Call', 'meld': {'fromPlayer': 3, 'type': 'chi', 'called': 1, 'tiles': ['1m3', '2m2', '3m1']}, 'player': 2
+'type': 'Discard', 'tile': '3m3', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '5m3', 'player': 3
+'type': 'Discard', 'tile': 'ew0', 'player': 3, 'connected': True
+'type': 'Call', 'meld': {'fromPlayer': 1, 'called': 0, 'type': 'pon', 'tiles': ['ew0', 'ew1', 'ew3']}, 'player': 2
+'type': 'Discard', 'tile': '2s3', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '8m0', 'player': 3
+'type': 'Discard', 'tile': 'wd3', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '9s2', 'player': 0
+'type': 'Discard', 'tile': '9s2', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '5m2', 'player': 1
+'type': 'Discard', 'tile': '5m2', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '1p1', 'player': 2
+'type': 'Discard', 'tile': '1p1', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '7p1', 'player': 3
+'type': 'Discard', 'tile': '8m0', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '9p0', 'player': 0
+'type': 'Discard', 'tile': 'nw0', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '6p2', 'player': 1
+'type': 'Discard', 'tile': '2s1', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': 'ww3', 'player': 2
+'type': 'Discard', 'tile': '1s2', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '8m2', 'player': 3
+'type': 'Discard', 'tile': '8m2', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '9p1', 'player': 0
+'type': 'Discard', 'tile': 'gd1', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '9p2', 'player': 1
+'type': 'Discard', 'tile': '1s3', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': 'nw3', 'player': 2
+'type': 'Discard', 'tile': 'ww3', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '4p3', 'player': 3
+'type': 'Discard', 'tile': '1p2', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '6m3', 'player': 0
+'type': 'Discard', 'tile': '9p0', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '4p1', 'player': 1
+'type': 'Discard', 'tile': '9p2', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': 'sw2', 'player': 2
+'type': 'Discard', 'tile': 'nw3', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '1m0', 'player': 3
+'type': 'Discard', 'tile': 'rd0', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '4p0', 'player': 0
+'type': 'Discard', 'tile': '8p2', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': 'wd1', 'player': 1
+'type': 'Discard', 'tile': 'wd1', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '9m1', 'player': 2
+'type': 'Discard', 'tile': '9m1', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '2p3', 'player': 3
+'type': 'Discard', 'tile': '1m0', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '1p0', 'player': 0
+'type': 'Discard', 'tile': '1p0', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '6m2', 'player': 1
+'type': 'Discard', 'tile': '6p2', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '7m0', 'player': 2
+'type': 'Discard', 'tile': 'sw2', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '4m1', 'player': 3
+'type': 'Discard', 'tile': '5m3', 'player': 3, 'connected': True
+'type': 'Call', 'meld': {'fromPlayer': 3, 'type': 'chi', 'called': 0, 'tiles': ['5m3', '6m3', '7m3']}, 'player': 0
+'type': 'Discard', 'tile': '9p1', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '8s0', 'player': 1
+'type': 'Discard', 'tile': '8s0', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '1m2', 'player': 2
+'type': 'Discard', 'tile': 'rd3', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '3m0', 'player': 3
+'type': 'Discard', 'tile': '8s3', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '5p2', 'player': 0
+'type': 'Discard', 'tile': '5p2', 'player': 0, 'connected': True}], 'ryuukyoku': False, 'ryuukyoku_tenpai': None, 'reaches': [1], 'reach_turns': [10], 'turns': [11, 11, 12, 12], 'deltas': [-39, 49, 0, 0]
+'dealer': 1, 'hands': [['3s3', 'nw2', '9m1', '3m1', '8m0', '3m0', '3p1', '4s2', '2s3', '9s0', '9p3', 'gd3', '9m0'], ['4m0', '2p2', '3s0', '8s0', '1p1', '2m0', '2s2', 'ww3', '3p2', '8m2', '8p3', '5m0', '7m3'], ['5p0', '3m2', '1s1', '5s3', '1m0', 'ww2', '2p1', '9s1', '7p2', '6p1', 'nw0', 'wd1', '6m2'], ['wd2', '4p2', '1p2', '9p0', '7p1', 'sw3', '5m3', '4p1', '7s3', '2m2', '1m2', '6p3', '2m1']], 'round': ['東2', 1, 0], 'agari': [], 'events': [{'type': 'Dora', 'tile': '2p0'
+'type': 'Draw', 'tile': '6p2', 'player': 1
+'type': 'Discard', 'tile': 'ww3', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': 'gd0', 'player': 2
+'type': 'Discard', 'tile': 'nw0', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '9m2', 'player': 3
+'type': 'Discard', 'tile': 'sw3', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '4s1', 'player': 0
+'type': 'Discard', 'tile': 'nw2', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '6p0', 'player': 1
+'type': 'Discard', 'tile': '8p3', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '4s0', 'player': 2
+'type': 'Discard', 'tile': 'ww2', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '1s3', 'player': 3
+'type': 'Discard', 'tile': '9m2', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '8s2', 'player': 0
+'type': 'Discard', 'tile': 'gd3', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '6m0', 'player': 1
+'type': 'Discard', 'tile': '8s0', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': 'ew2', 'player': 2
+'type': 'Discard', 'tile': 'gd0', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '8p1', 'player': 3
+'type': 'Discard', 'tile': '1s3', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '3m3', 'player': 0
+'type': 'Discard', 'tile': '9p3', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '1m3', 'player': 1
+'type': 'Discard', 'tile': '2m0', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '7s2', 'player': 2
+'type': 'Discard', 'tile': '1s1', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '1m1', 'player': 3
+'type': 'Discard', 'tile': '1p2', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': 'ww0', 'player': 0
+'type': 'Discard', 'tile': 'ww0', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '5p1', 'player': 1
+'type': 'Discard', 'tile': '5p1', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': 'ew3', 'player': 2
+'type': 'Discard', 'tile': '2p1', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': 'sw0', 'player': 3
+'type': 'Discard', 'tile': 'sw0', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '2p3', 'player': 0
+'type': 'Discard', 'tile': '8m0', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': 'wd3', 'player': 1
+'type': 'Discard', 'tile': '1m3', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '1s0', 'player': 2
+'type': 'Discard', 'tile': '1s0', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '7m0', 'player': 3
+'type': 'Discard', 'tile': 'wd2', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': 'sw1', 'player': 0
+'type': 'Discard', 'tile': 'sw1', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': 'ew0', 'player': 1
+'type': 'Discard', 'tile': 'ew0', 'player': 1, 'connected': True
+'type': 'Call', 'meld': {'fromPlayer': 3, 'called': 0, 'type': 'pon', 'tiles': ['ew0', 'ew2', 'ew3']}, 'player': 2
+'type': 'Discard', 'tile': '6m2', 'player': 2, 'connected': True
+'type': 'Call', 'meld': {'fromPlayer': 3, 'type': 'chi', 'called': 1, 'tiles': ['5m3', '6m2', '7m0']}, 'player': 3
+'type': 'Discard', 'tile': '1m2', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '5p3', 'player': 0
+'type': 'Discard', 'tile': '5p3', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': 'gd1', 'player': 1
+'type': 'Discard', 'tile': 'wd3', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '4p0', 'player': 2
+'type': 'Discard', 'tile': 'wd1', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '8m3', 'player': 3
+'type': 'Discard', 'tile': '1m1', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': 'rd2', 'player': 0
+'type': 'Discard', 'tile': 'rd2', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '5m1', 'player': 1
+'type': 'Discard', 'tile': '5m1', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '5s2', 'player': 2
+'type': 'Discard', 'tile': '4s0', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '1p3', 'player': 3
+'type': 'Discard', 'tile': '1p3', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '5p2', 'player': 0
+'type': 'Discard', 'tile': '5p2', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '4m1', 'player': 1
+'type': 'Discard', 'tile': '4m1', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '4p3', 'player': 2
+'type': 'Discard', 'tile': '9s1', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': 'ww1', 'player': 3
+'type': 'Discard', 'tile': '9p0', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '5s0', 'player': 0
+'type': 'Discard', 'tile': '8s2', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '7s0', 'player': 1
+'type': 'Discard', 'tile': '7s0', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '9s2', 'player': 2
+'type': 'Discard', 'tile': '9s2', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '6s0', 'player': 3
+'type': 'Discard', 'tile': '8m3', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '3p3', 'player': 0
+'type': 'Discard', 'tile': '9s0', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': 'rd3', 'player': 1
+'type': 'Discard', 'tile': 'rd3', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '7p3', 'player': 2
+'type': 'Discard', 'tile': '7s2', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '6m3', 'player': 3
+'type': 'Discard', 'tile': '6m3', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '8m1', 'player': 0
+'type': 'Discard', 'tile': '8m1', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': 'wd0', 'player': 1
+'type': 'Discard', 'tile': 'wd0', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '7m1', 'player': 2
+'type': 'Discard', 'tile': '7m1', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '6s1', 'player': 3
+'type': 'Discard', 'tile': '6s1', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': 'nw3', 'player': 0
+'type': 'Discard', 'tile': 'nw3', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '4m2', 'player': 1
+'type': 'Discard', 'tile': '4m2', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '2m3', 'player': 2
+'type': 'Discard', 'tile': '4p3', 'player': 2, 'connected': True
+'type': 'Call', 'meld': {'fromPlayer': 3, 'called': 2, 'type': 'pon', 'tiles': ['4p1', '4p2', '4p3']}, 'player': 3
+'type': 'Discard', 'tile': 'ww1', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '5s1', 'player': 0
+'type': 'Discard', 'tile': '9m0', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '4m3', 'player': 1
+'type': 'Discard', 'tile': '4m3', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': 'sw2', 'player': 2
+'type': 'Discard', 'tile': 'sw2', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '1p0', 'player': 3
+'type': 'Discard', 'tile': '1p0', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': 'nw1', 'player': 0
+'type': 'Discard', 'tile': '9m1', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '9m3', 'player': 1
+'type': 'Discard', 'tile': 'gd1', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '3s1', 'player': 2
+'type': 'Discard', 'tile': '3s1', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '9s3', 'player': 3
+'type': 'Discard', 'tile': '9s3', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '7m2', 'player': 0
+'type': 'Discard', 'tile': 'nw1', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '8p2', 'player': 1
+'type': 'Discard', 'tile': '8p2', 'player': 1, 'connected': True
+'type': 'Call', 'meld': {'fromPlayer': 3, 'type': 'chi', 'called': 2, 'tiles': ['6p1', '7p2', '8p2']}, 'player': 2
+'type': 'Discard', 'tile': '7p3', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '7s1', 'player': 3
+'type': 'Discard', 'tile': '7s1', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '1s2', 'player': 0
+'type': 'Discard', 'tile': '7m2', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '2s0', 'player': 1
+'type': 'Discard', 'tile': '3s0', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '5m2', 'player': 2
+'type': 'Discard', 'tile': '5m2', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '6s2', 'player': 3
+'type': 'Discard', 'tile': '6s2', 'player': 3, 'connected': True
+'type': 'Call', 'meld': {'fromPlayer': 3, 'type': 'chi', 'called': 2, 'tiles': ['4s1', '5s0', '6s2']}, 'player': 0
+'type': 'Discard', 'tile': '2p3', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '4s3', 'player': 1
+'type': 'Discard', 'tile': '4s3', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': 'gd2', 'player': 2
+'type': 'Discard', 'tile': 'gd2', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '9p2', 'player': 3
+'type': 'Discard', 'tile': '9p2', 'player': 3, 'connected': True}], 'ryuukyoku': True, 'ryuukyoku_tenpai': [0, 1, 2, 3], 'reaches': [], 'reach_turns': [], 'turns': [18, 19, 19, 19], 'deltas': [0, 0, 0, 0]
+'dealer': 1, 'hands': [['4m3', '5m3', '2m1', '8s1', '4p0', '6s0', 'nw1', 'ew1', '6s1', 'nw0', '5p0', '7p3', '7s0'], ['sw0', '1m2', 'rd0', '3s1', '3p0', '8s0', 'ww3', '3p3', '9m3', '8p3', '4s2', '6m0', 'gd3'], ['3m2', '9p3', 'rd2', '5p1', '5s3', 'nw3', '8p1', '4s3', '7m2', 'ew0', '8m0', '2s1', '1m0'], ['wd2', '7s3', '1s0', '4p2', '2m2', 'sw1', '2s2', '8s3', '6p1', 'wd0', 'ww2', 'sw3', '1p2']], 'round': ['東2', 2, 0], 'agari': [{'type': 'RON', 'player': 0, 'hand': ['4s1', '5s2', '6s0', '6s1', '7s0', '8s1', '4m1', '4m3'], 'fu': 30, 'points': 3900, 'limit': '', 'dora': ['7s1'], 'machi': ['4m1'], 'melds': [{'fromPlayer': 3, 'type': 'chi', 'called': 2, 'tiles': ['4p0', '5p0', '6p1']
+'fromPlayer': 2, 'called': 2, 'type': 'pon', 'tiles': ['nw0', 'nw1', 'nw3']}], 'closed': False, 'uradora': [], 'fromPlayer': 1, 'yaku': [['Jikaze Pei', 1], ['Dora', 1], ['Akadora', 1]], 'yakuman': []}], 'events': [{'type': 'Dora', 'tile': '7s1'
+'type': 'Draw', 'tile': '8m3', 'player': 1
+'type': 'Discard', 'tile': 'sw0', 'player': 1, 'connected': True
+'type': 'Call', 'meld': {'fromPlayer': 2, 'called': 0, 'type': 'pon', 'tiles': ['sw0', 'sw1', 'sw3']}, 'player': 3
+'type': 'Discard', 'tile': '1p2', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '1m3', 'player': 0
+'type': 'Discard', 'tile': 'ew1', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '9p0', 'player': 1
+'type': 'Discard', 'tile': 'ww3', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '5m1', 'player': 2
+'type': 'Discard', 'tile': 'nw3', 'player': 2, 'connected': True
+'type': 'Call', 'meld': {'fromPlayer': 2, 'called': 2, 'type': 'pon', 'tiles': ['nw0', 'nw1', 'nw3']}, 'player': 0
+'type': 'Discard', 'tile': '7p3', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': 'rd1', 'player': 1
+'type': 'Discard', 'tile': '1m2', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '3s3', 'player': 2
+'type': 'Discard', 'tile': 'rd2', 'player': 2, 'connected': True
+'type': 'Call', 'meld': {'fromPlayer': 1, 'called': 2, 'type': 'pon', 'tiles': ['rd0', 'rd1', 'rd2']}, 'player': 1
+'type': 'Discard', 'tile': '9m3', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '8m1', 'player': 2
+'type': 'Discard', 'tile': 'ew0', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '6s2', 'player': 3
+'type': 'Discard', 'tile': '2m2', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '4s1', 'player': 0
+'type': 'Discard', 'tile': '1m3', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '9s1', 'player': 1
+'type': 'Discard', 'tile': 'gd3', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '9s3', 'player': 2
+'type': 'Discard', 'tile': '9s3', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '4p1', 'player': 3
+'type': 'Discard', 'tile': '6p1', 'player': 3, 'connected': True
+'type': 'Call', 'meld': {'fromPlayer': 3, 'type': 'chi', 'called': 2, 'tiles': ['4p0', '5p0', '6p1']}, 'player': 0
+'type': 'Discard', 'tile': '2m1', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '6m1', 'player': 1
+'type': 'Discard', 'tile': '8p3', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '4m0', 'player': 2
+'type': 'Discard', 'tile': '1m0', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': 'ew2', 'player': 3
+'type': 'Discard', 'tile': 'ew2', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '7m3', 'player': 0
+'type': 'Discard', 'tile': '7m3', 'player': 0, 'connected': True
+'type': 'Call', 'meld': {'fromPlayer': 3, 'type': 'chi', 'called': 1, 'tiles': ['6m0', '7m3', '8m3']}, 'player': 1
+'type': 'Discard', 'tile': '6m1', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '3p2', 'player': 2
+'type': 'Discard', 'tile': '7m2', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': 'ww1', 'player': 3
+'type': 'Discard', 'tile': '4p2', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': 'rd3', 'player': 0
+'type': 'Discard', 'tile': 'rd3', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '1p3', 'player': 1
+'type': 'Discard', 'tile': '1p3', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '9m1', 'player': 2
+'type': 'Discard', 'tile': '9m1', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '1p1', 'player': 3
+'type': 'Discard', 'tile': '4p1', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': 'ew3', 'player': 0
+'type': 'Discard', 'tile': 'ew3', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '1m1', 'player': 1
+'type': 'Discard', 'tile': '1m1', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': 'wd3', 'player': 2
+'type': 'Discard', 'tile': '8p1', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '8p2', 'player': 3
+'type': 'Discard', 'tile': '1p1', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '5s2', 'player': 0
+'type': 'Discard', 'tile': '5m3', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '4m1', 'player': 1
+'type': 'Discard', 'tile': '4m1', 'player': 1, 'connected': True}], 'ryuukyoku': False, 'ryuukyoku_tenpai': None, 'reaches': [], 'reach_turns': [], 'turns': [8, 10, 8, 7], 'deltas': [45, -45, 0, 0]
+'dealer': 2, 'hands': [['9s2', 'wd2', '1p0', '5m0', '9p2', '1s0', '8m0', 'ew0', '3p2', '8m2', '4m3', 'wd3', '4p2'], ['3s2', '8m3', 'ew1', '4p1', '6p3', '8p2', '2s2', '2s0', 'ww2', '8m1', '2m0', 'gd2', '3p0'], ['7m2', '9m3', '3s3', '5p0', 'wd0', '9p0', 'ww1', '4p3', '3m1', '6p1', '1p1', '5m1', '4s0'], ['6p2', '9s0', '3m3', '4s2', '6m2', '4m2', '6m0', '5p2', '6m3', '7s3', '1s1', '5s0', 'ww3']], 'round': ['東3', 0, 0], 'agari': [{'type': 'RON', 'player': 0, 'hand': ['2p0', '3p2', '4p2', '7p0', '8p1', '9p2', '8m0', '8m2'], 'fu': 30, 'points': 2000, 'limit': '', 'dora': ['ew3'], 'machi': ['8p1'], 'melds': [{'fromPlayer': 3, 'type': 'chi', 'called': 0, 'tiles': ['3m3', '4m3', '5m0']
+'fromPlayer': 2, 'called': 0, 'type': 'pon', 'tiles': ['wd0', 'wd2', 'wd3']}], 'closed': False, 'uradora': [], 'fromPlayer': 3, 'yaku': [['Yakuhai Haku', 1], ['Akadora', 1]], 'yakuman': []}], 'events': [{'type': 'Dora', 'tile': 'ew3'
+'type': 'Draw', 'tile': '5p1', 'player': 2
+'type': 'Discard', 'tile': 'ww1', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '7p1', 'player': 3
+'type': 'Discard', 'tile': '1s1', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '7p0', 'player': 0
+'type': 'Discard', 'tile': '1p0', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '4m0', 'player': 1
+'type': 'Discard', 'tile': 'ew1', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': 'gd1', 'player': 2
+'type': 'Discard', 'tile': 'wd0', 'player': 2, 'connected': True
+'type': 'Call', 'meld': {'fromPlayer': 2, 'called': 0, 'type': 'pon', 'tiles': ['wd0', 'wd2', 'wd3']}, 'player': 0
+'type': 'Discard', 'tile': 'ew0', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '2m3', 'player': 1
+'type': 'Discard', 'tile': 'gd2', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '3s1', 'player': 2
+'type': 'Discard', 'tile': 'gd1', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '9p3', 'player': 3
+'type': 'Discard', 'tile': 'ww3', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '9m0', 'player': 0
+'type': 'Discard', 'tile': '9s2', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '4s1', 'player': 1
+'type': 'Discard', 'tile': 'ww2', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': 'gd0', 'player': 2
+'type': 'Discard', 'tile': 'gd0', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '8s0', 'player': 3
+'type': 'Discard', 'tile': '9p3', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '2p0', 'player': 0
+'type': 'Discard', 'tile': '1s0', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': 'rd2', 'player': 1
+'type': 'Discard', 'tile': 'rd2', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '5s3', 'player': 2
+'type': 'Discard', 'tile': '1p1', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': 'sw2', 'player': 3
+'type': 'Discard', 'tile': 'sw2', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': 'rd1', 'player': 0
+'type': 'Discard', 'tile': '9m0', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '4s3', 'player': 1
+'type': 'Discard', 'tile': '8p2', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '9m2', 'player': 2
+'type': 'Discard', 'tile': '9p0', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '5m3', 'player': 3
+'type': 'Discard', 'tile': '3m3', 'player': 3, 'connected': True
+'type': 'Call', 'meld': {'fromPlayer': 3, 'type': 'chi', 'called': 0, 'tiles': ['3m3', '4m3', '5m0']}, 'player': 0
+'type': 'Discard', 'tile': 'rd1', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '8p3', 'player': 1
+'type': 'Discard', 'tile': '2m0', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '3p1', 'player': 2
+'type': 'Discard', 'tile': '3m1', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': 'nw0', 'player': 3
+'type': 'Discard', 'tile': 'nw0', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '9p1', 'player': 0
+'type': 'Discard', 'tile': '9p1', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '1m2', 'player': 1
+'type': 'Discard', 'tile': '2m3', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '5p3', 'player': 2
+'type': 'Discard', 'tile': '9m3', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '8p1', 'player': 3
+'type': 'Discard', 'tile': '8p1', 'player': 3, 'connected': True}], 'ryuukyoku': False, 'ryuukyoku_tenpai': None, 'reaches': [3], 'reach_turns': [5], 'turns': [7, 7, 8, 7], 'deltas': [30, 0, 0, -20]
+'dealer': 3, 'hands': [['gd0', 'wd3', '2p2', '6p1', '1m1', 'sw1', 'wd2', '9p1', '1p2', '8s2', '3m1', '6m0', '3m3'], ['2s2', '6p3', '2p1', '7m2', '6p0', '1p1', '9m2', '5m1', '3p3', '4s0', '3m2', '4m3', '1m2'], ['6m2', '8p3', '3s0', '8m2', '2p0', 'nw2', '8p0', '6s3', '3s3', '7m1', '4m1', '5m2', '4p3'], ['7s1', '2s3', '5s3', 'ew2', 'ww1', '7p3', '9p2', 'sw3', '3p2', 'rd1', '2m1', '9s1', '5m3']], 'round': ['東4', 0, 0], 'agari': [], 'events': [{'type': 'Dora', 'tile': '6p2'
+'type': 'Draw', 'tile': '3p1', 'player': 3
+'type': 'Discard', 'tile': 'sw3', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': 'rd3', 'player': 0
+'type': 'Discard', 'tile': '9p1', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': 'ww3', 'player': 1
+'type': 'Discard', 'tile': 'ww3', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '8s3', 'player': 2
+'type': 'Discard', 'tile': 'nw2', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '5s2', 'player': 3
+'type': 'Discard', 'tile': 'ww1', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': 'ew1', 'player': 0
+'type': 'Discard', 'tile': 'sw1', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '6s0', 'player': 1
+'type': 'Discard', 'tile': '1m2', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '3m0', 'player': 2
+'type': 'Discard', 'tile': '2p0', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': 'nw3', 'player': 3
+'type': 'Discard', 'tile': 'nw3', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '4s2', 'player': 0
+'type': 'Discard', 'tile': 'ew1', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '2m0', 'player': 1
+'type': 'Discard', 'tile': '9m2', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '2m3', 'player': 2
+'type': 'Discard', 'tile': '4p3', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': 'wd0', 'player': 3
+'type': 'Discard', 'tile': '2m1', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': 'nw1', 'player': 0
+'type': 'Discard', 'tile': 'nw1', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '1m0', 'player': 1
+'type': 'Discard', 'tile': '7m2', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '9p0', 'player': 2
+'type': 'Discard', 'tile': '9p0', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '5m0', 'player': 3
+'type': 'Discard', 'tile': 'ew2', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '1s0', 'player': 0
+'type': 'Discard', 'tile': '1s0', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '4p1', 'player': 1
+'type': 'Discard', 'tile': '1p1', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '7m0', 'player': 2
+'type': 'Discard', 'tile': '6s3', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '1p3', 'player': 3
+'type': 'Discard', 'tile': '2s3', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '9m0', 'player': 0
+'type': 'Discard', 'tile': '9m0', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '4m2', 'player': 1
+'type': 'Discard', 'tile': '1m0', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': 'rd0', 'player': 2
+'type': 'Discard', 'tile': '8s3', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '7s2', 'player': 3
+'type': 'Discard', 'tile': '9p2', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '7p1', 'player': 0
+'type': 'Discard', 'tile': 'rd3', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '5s1', 'player': 1
+'type': 'Discard', 'tile': '2s2', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': 'rd2', 'player': 2
+'type': 'Discard', 'tile': 'rd2', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '1s1', 'player': 3
+'type': 'Discard', 'tile': 'rd1', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '5p1', 'player': 0
+'type': 'Discard', 'tile': '1m1', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '1p0', 'player': 1
+'type': 'Discard', 'tile': '1p0', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '6s1', 'player': 2
+'type': 'Discard', 'tile': 'rd0', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '9s2', 'player': 3
+'type': 'Discard', 'tile': '1p3', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '8s0', 'player': 0
+'type': 'Discard', 'tile': '1p2', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '7p0', 'player': 1
+'type': 'Discard', 'tile': '7p0', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': 'sw2', 'player': 2
+'type': 'Discard', 'tile': 'sw2', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '2m2', 'player': 3
+'type': 'Discard', 'tile': '7p3', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': 'sw0', 'player': 0
+'type': 'Discard', 'tile': 'sw0', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '7s0', 'player': 1
+'type': 'Discard', 'tile': '7s0', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '3p0', 'player': 2
+'type': 'Discard', 'tile': '7m0', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': 'ew0', 'player': 3
+'type': 'Discard', 'tile': 'ew0', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '9s3', 'player': 0
+'type': 'Discard', 'tile': 'wd3', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '8m0', 'player': 1
+'type': 'Discard', 'tile': '8m0', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '4s1', 'player': 2
+'type': 'Discard', 'tile': '8m2', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '5s0', 'player': 3
+'type': 'Discard', 'tile': 'wd0', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '7s3', 'player': 0
+'type': 'Discard', 'tile': 'wd2', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': 'gd2', 'player': 1
+'type': 'Discard', 'tile': 'gd2', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '5p3', 'player': 2
+'type': 'Discard', 'tile': '7m1', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '9m1', 'player': 3
+'type': 'Discard', 'tile': '9m1', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': 'nw0', 'player': 0
+'type': 'Discard', 'tile': 'gd0', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '4p2', 'player': 1
+'type': 'Discard', 'tile': '4p2', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '4m0', 'player': 2
+'type': 'Discard', 'tile': '4m0', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '2s1', 'player': 3
+'type': 'Discard', 'tile': '2s1', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '2s0', 'player': 0
+'type': 'Discard', 'tile': 'nw0', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '5p2', 'player': 1
+'type': 'Discard', 'tile': '5p2', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '4s3', 'player': 2
+'type': 'Discard', 'tile': '5p3', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '8p1', 'player': 3
+'type': 'Discard', 'tile': '7s2', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': 'gd1', 'player': 0
+'type': 'Discard', 'tile': 'gd1', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': 'ew3', 'player': 1
+'type': 'Discard', 'tile': 'ew3', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '1m3', 'player': 2
+'type': 'Discard', 'tile': '4m1', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '3s2', 'player': 3
+'type': 'Discard', 'tile': '7s1', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '2p3', 'player': 0
+'type': 'Discard', 'tile': '9s3', 'player': 0, 'connected': True
+'type': 'Call', 'meld': {'fromPlayer': 1, 'called': 2, 'type': 'pon', 'tiles': ['9s1', '9s2', '9s3']}, 'player': 3
+'type': 'Discard', 'tile': '8p1', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '1s2', 'player': 0
+'type': 'Discard', 'tile': '2s0', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '8m3', 'player': 1
+'type': 'Discard', 'tile': '8m3', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': 'gd3', 'player': 2
+'type': 'Discard', 'tile': 'gd3', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '8s1', 'player': 3
+'type': 'Discard', 'tile': '1s1', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '3s1', 'player': 0
+'type': 'Discard', 'tile': '1s2', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '9s0', 'player': 1
+'type': 'Discard', 'tile': '9s0', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '4p0', 'player': 2
+'type': 'Discard', 'tile': '8p3', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '8p2', 'player': 3
+'type': 'Discard', 'tile': '8p2', 'player': 3, 'connected': True}], 'ryuukyoku': True, 'ryuukyoku_tenpai': [1], 'reaches': [1], 'reach_turns': [7], 'turns': [18, 17, 17, 19], 'deltas': [-10, 30, -10, -10]
+'dealer': 0, 'hands': [['2s0', '9p0', '3m3', 'ww3', '7p1', 'sw1', '9p3', '5p3', '8m3', '2m2', '8m2', '1m2', '5s1'], ['4m2', '1m0', 'gd3', '5s0', '6s2', '4m1', '4s0', '8p1', 'ww1', '3m0', '2s3', '2p3', 'ew0'], ['rd3', 'nw0', '6s1', 'gd1', '2m1', 'ew2', '1p0', 'sw2', 'wd1', 'rd1', '6m0', 'gd0', '4p3'], ['9p1', '7s1', '7s3', '2s1', '1m3', '1s0', '7s0', 'ww2', 'wd0', '4s1', 'gd2', '5p0', '9s0']], 'round': ['南1', 1, 1], 'agari': [{'type': 'RON', 'player': 0, 'hand': ['1s2', '2s0', '3s3', '3p2', '4p2', '5p3', '6p1', '7p1', '8p1', '1m2', '2m2', '3m3', '8m2', '8m3'], 'fu': 30, 'points': 5800, 'limit': '', 'dora': ['2p0'], 'machi': ['8p1'], 'melds': [], 'closed': True, 'uradora': [], 'fromPlayer': 1, 'yaku': [['Riichi', 1], ['Pinfu', 1], ['Dora', 1], ['Uradora', 0]], 'yakuman': []}], 'events': [{'type': 'Dora', 'tile': '2p0'
+'type': 'Draw', 'tile': '1p3', 'player': 0
+'type': 'Discard', 'tile': 'ww3', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': 'rd0', 'player': 1
+'type': 'Discard', 'tile': 'ew0', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '8p0', 'player': 2
+'type': 'Discard', 'tile': 'ew2', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '9p2', 'player': 3
+'type': 'Discard', 'tile': 'ww2', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '3s3', 'player': 0
+'type': 'Discard', 'tile': 'sw1', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '7m1', 'player': 1
+'type': 'Discard', 'tile': 'ww1', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '3m1', 'player': 2
+'type': 'Discard', 'tile': '1p0', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '4m3', 'player': 3
+'type': 'Discard', 'tile': '1m3', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': 'wd3', 'player': 0
+'type': 'Discard', 'tile': 'wd3', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '1p1', 'player': 1
+'type': 'Discard', 'tile': 'gd3', 'player': 1, 'connected': True
+'type': 'Call', 'meld': {'fromPlayer': 3, 'called': 2, 'type': 'pon', 'tiles': ['gd0', 'gd1', 'gd3']}, 'player': 2
+'type': 'Discard', 'tile': '8p0', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '6p3', 'player': 3
+'type': 'Discard', 'tile': 'gd2', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '4p2', 'player': 0
+'type': 'Discard', 'tile': '1p3', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '9s1', 'player': 1
+'type': 'Discard', 'tile': '9s1', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '5p1', 'player': 2
+'type': 'Discard', 'tile': 'sw2', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '1p2', 'player': 3
+'type': 'Discard', 'tile': 'wd0', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '6p1', 'player': 0
+'type': 'Discard', 'tile': '5s1', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '3s0', 'player': 1
+'type': 'Discard', 'tile': 'rd0', 'player': 1, 'connected': True
+'type': 'Call', 'meld': {'fromPlayer': 3, 'called': 0, 'type': 'pon', 'tiles': ['rd0', 'rd1', 'rd3']}, 'player': 2
+'type': 'Discard', 'tile': '6s1', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '9s3', 'player': 3
+'type': 'Discard', 'tile': '1s0', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '3p2', 'player': 0
+'type': 'Discard', 'tile': '9p0', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '2s2', 'player': 1
+'type': 'Discard', 'tile': '2s2', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '1s1', 'player': 2
+'type': 'Discard', 'tile': '1s1', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '8s3', 'player': 3
+'type': 'Discard', 'tile': '1p2', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '2m0', 'player': 0
+'type': 'Discard', 'tile': '9p3', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '7p3', 'player': 1
+'type': 'Discard', 'tile': '7m1', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '7p0', 'player': 2
+'type': 'Discard', 'tile': '7p0', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '3p1', 'player': 3
+'type': 'Discard', 'tile': '9p1', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '1s2', 'player': 0
+'type': 'Discard', 'tile': '2m0', 'player': 0, 'connected': True
+'type': 'Call', 'meld': {'fromPlayer': 3, 'type': 'chi', 'called': 1, 'tiles': ['1m0', '2m0', '3m0']}, 'player': 1
+'type': 'Discard', 'tile': '7p3', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': 'sw0', 'player': 2
+'type': 'Discard', 'tile': 'sw0', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '6p0', 'player': 3
+'type': 'Discard', 'tile': '9p2', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '5m0', 'player': 0
+'type': 'Discard', 'tile': '5m0', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '7m2', 'player': 1
+'type': 'Discard', 'tile': '8p1', 'player': 1, 'connected': True}], 'ryuukyoku': False, 'ryuukyoku_tenpai': None, 'reaches': [0], 'reach_turns': [8], 'turns': [9, 9, 8, 8], 'deltas': [81, -61, 0, 0]
+'dealer': 0, 'hands': [['sw3', 'rd2', 'sw1', '1p0', 'ww2', 'rd3', '6p1', '4p0', 'ww0', '4s1', '7m0', '7p1', '1m3'], ['7s2', '6s1', '4p2', '9m1', '5m0', 'ew3', '4m3', 'sw2', '2m1', '5p1', '5s3', '2m2', '2s0'], ['6s0', '9s0', '8s2', '3m1', 'ww3', '2m3', '3s1', '4s2', 'wd0', 'wd1', '1m1', '3p0', 'gd3'], ['2p2', '6p3', '3s2', '6m0', 'nw3', 'ew2', 'ww1', '1s0', 'nw0', '7p0', '3m3', '7m3', '5m1']], 'round': ['南1', 2, 0], 'agari': [{'type': 'RON', 'player': 1, 'hand': ['5s3', '6s1', '7s2', '3p1', '3p3', '4p1', '4p2', '5p1', '5p3', '2m1', '2m2', '3m3', '4m3', '5m0'], 'fu': 30, 'points': 8000, 'limit': 'mangan', 'dora': ['4s0'], 'machi': ['3m3'], 'melds': [], 'closed': True, 'uradora': [], 'fromPlayer': 3, 'yaku': [['Pinfu', 1], ['Iipeikou', 1], ['Tanyao', 1], ['Dora', 1], ['Akadora', 1]], 'yakuman': []}], 'events': [{'type': 'Dora', 'tile': '4s0'
+'type': 'Draw', 'tile': '4m2', 'player': 0
+'type': 'Discard', 'tile': '1m3', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '5p3', 'player': 1
+'type': 'Discard', 'tile': 'ew3', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '2s1', 'player': 2
+'type': 'Discard', 'tile': 'gd3', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': 'nw2', 'player': 3
+'type': 'Discard', 'tile': 'ew2', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '8p1', 'player': 0
+'type': 'Discard', 'tile': '4s1', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '3p3', 'player': 1
+'type': 'Discard', 'tile': '9m1', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '3s0', 'player': 2
+'type': 'Discard', 'tile': 'ww3', 'player': 2, 'connected': True
+'type': 'Call', 'meld': {'fromPlayer': 2, 'called': 2, 'type': 'pon', 'tiles': ['ww0', 'ww2', 'ww3']}, 'player': 0
+'type': 'Discard', 'tile': '4m2', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '5m3', 'player': 1
+'type': 'Discard', 'tile': 'sw2', 'player': 1, 'connected': True
+'type': 'Call', 'meld': {'fromPlayer': 1, 'called': 1, 'type': 'pon', 'tiles': ['sw1', 'sw2', 'sw3']}, 'player': 0
+'type': 'Discard', 'tile': '7m0', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '4p1', 'player': 1
+'type': 'Discard', 'tile': '2s0', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '2s3', 'player': 2
+'type': 'Discard', 'tile': '3p0', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '9m2', 'player': 3
+'type': 'Discard', 'tile': 'ww1', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': 'rd1', 'player': 0
+'type': 'Discard', 'tile': '4p0', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '1s1', 'player': 1
+'type': 'Discard', 'tile': '1s1', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': 'gd1', 'player': 2
+'type': 'Discard', 'tile': 'gd1', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '5p2', 'player': 3
+'type': 'Discard', 'tile': '9m2', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '8s3', 'player': 0
+'type': 'Discard', 'tile': '8s3', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': 'ew1', 'player': 1
+'type': 'Discard', 'tile': 'ew1', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '1m2', 'player': 2
+'type': 'Discard', 'tile': '1m1', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '8m0', 'player': 3
+'type': 'Discard', 'tile': '2p2', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '5s0', 'player': 0
+'type': 'Discard', 'tile': '5s0', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '3p1', 'player': 1
+'type': 'Discard', 'tile': '5m3', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': 'gd0', 'player': 2
+'type': 'Discard', 'tile': 'gd0', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '1s2', 'player': 3
+'type': 'Discard', 'tile': '3s2', 'player': 3, 'connected': True
+'type': 'Call', 'meld': {'fromPlayer': 1, 'called': 2, 'type': 'pon', 'tiles': ['3s0', '3s1', '3s2']}, 'player': 2
+'type': 'Discard', 'tile': '9s0', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '2s2', 'player': 3
+'type': 'Discard', 'tile': '2s2', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '9p1', 'player': 0
+'type': 'Discard', 'tile': '1p0', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '8s0', 'player': 1
+'type': 'Discard', 'tile': '8s0', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '8p2', 'player': 2
+'type': 'Discard', 'tile': '8s2', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '6p2', 'player': 3
+'type': 'Discard', 'tile': '3m3', 'player': 3, 'connected': True}], 'ryuukyoku': False, 'ryuukyoku_tenpai': None, 'reaches': [], 'reach_turns': [], 'turns': [8, 8, 8, 7], 'deltas': [0, 86, 0, -86]
+'dealer': 1, 'hands': [['4p2', '5p1', '5s1', '6s2', '1s0', '4s0', '8s3', '5s0', '1p0', 'gd0', '9s2', '8p2', 'sw2'], ['4p1', '3s0', '4s3', '7s0', 'rd1', '3s2', '9s3', 'rd2', '8p1', '2m0', '3p1', '2s1', '8m0'], ['1p1', '4m3', '5m2', '1m3', '4m2', '6p3', 'rd3', '2s0', '9p1', '4p3', '5p3', '3m1', '5s2'], ['rd0', '1m0', '6p2', '7p2', '7p3', '7m0', '3p3', '9s1', 'gd1', '6m1', '4s2', '6s3', '3p2']], 'round': ['南2', 0, 0], 'agari': [{'type': 'RON', 'player': 0, 'hand': ['4s1', '5s1', '6s2', '8s2', '8s3', '4p2', '5p1', '6p1'], 'fu': 30, 'points': 2000, 'limit': '', 'dora': ['8s1'], 'machi': ['8s2'], 'melds': [{'fromPlayer': 3, 'type': 'chi', 'called': 2, 'tiles': ['4s0', '5s0', '6s3']
+'fromPlayer': 3, 'called': 2, 'type': 'pon', 'tiles': ['wd0', 'wd2', 'wd3']}], 'closed': False, 'uradora': [], 'fromPlayer': 2, 'yaku': [['Yakuhai Haku', 1], ['Akadora', 1]], 'yakuman': []}], 'events': [{'type': 'Dora', 'tile': '8s1'
+'type': 'Draw', 'tile': 'ww1', 'player': 1
+'type': 'Discard', 'tile': 'ww1', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': 'nw3', 'player': 2
+'type': 'Discard', 'tile': 'nw3', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': 'nw2', 'player': 3
+'type': 'Discard', 'tile': 'nw2', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': 'wd0', 'player': 0
+'type': 'Discard', 'tile': '1p0', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': 'sw1', 'player': 1
+'type': 'Discard', 'tile': 'sw1', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '6p0', 'player': 2
+'type': 'Discard', 'tile': '9p1', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': 'ew2', 'player': 3
+'type': 'Discard', 'tile': '1m0', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '4s1', 'player': 0
+'type': 'Discard', 'tile': '1s0', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '9p0', 'player': 1
+'type': 'Discard', 'tile': '8m0', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '2m2', 'player': 2
+'type': 'Discard', 'tile': '1p1', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '3s1', 'player': 3
+'type': 'Discard', 'tile': 'ew2', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '6p1', 'player': 0
+'type': 'Discard', 'tile': 'sw2', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '1p2', 'player': 1
+'type': 'Discard', 'tile': '1p2', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': 'ww2', 'player': 2
+'type': 'Discard', 'tile': 'ww2', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '3m0', 'player': 3
+'type': 'Discard', 'tile': 'gd1', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': 'wd2', 'player': 0
+'type': 'Discard', 'tile': 'gd0', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '3m3', 'player': 1
+'type': 'Discard', 'tile': '3s2', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '1s3', 'player': 2
+'type': 'Discard', 'tile': 'rd3', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '7m1', 'player': 3
+'type': 'Discard', 'tile': 'rd0', 'player': 3, 'connected': True
+'type': 'Call', 'meld': {'fromPlayer': 2, 'called': 0, 'type': 'pon', 'tiles': ['rd0', 'rd1', 'rd2']}, 'player': 1
+'type': 'Discard', 'tile': '9p0', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': 'sw3', 'player': 2
+'type': 'Discard', 'tile': 'sw3', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': 'wd3', 'player': 3
+'type': 'Discard', 'tile': 'wd3', 'player': 3, 'connected': True
+'type': 'Call', 'meld': {'fromPlayer': 3, 'called': 2, 'type': 'pon', 'tiles': ['wd0', 'wd2', 'wd3']}, 'player': 0
+'type': 'Discard', 'tile': '8p2', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '7s2', 'player': 1
+'type': 'Discard', 'tile': '8p1', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '9m0', 'player': 2
+'type': 'Discard', 'tile': '9m0', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': 'ew3', 'player': 3
+'type': 'Discard', 'tile': 'ew3', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': 'ww0', 'player': 0
+'type': 'Discard', 'tile': 'ww0', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': 'ww3', 'player': 1
+'type': 'Discard', 'tile': '9s3', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '5p0', 'player': 2
+'type': 'Discard', 'tile': '1s3', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '2s3', 'player': 3
+'type': 'Discard', 'tile': '9s1', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '4m0', 'player': 0
+'type': 'Discard', 'tile': '4m0', 'player': 0, 'connected': True
+'type': 'Call', 'meld': {'fromPlayer': 3, 'type': 'chi', 'called': 2, 'tiles': ['2m0', '3m3', '4m0']}, 'player': 1
+'type': 'Discard', 'tile': 'ww3', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '1p3', 'player': 2
+'type': 'Discard', 'tile': '1p3', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '4p0', 'player': 3
+'type': 'Discard', 'tile': '6s3', 'player': 3, 'connected': True
+'type': 'Call', 'meld': {'fromPlayer': 3, 'type': 'chi', 'called': 2, 'tiles': ['4s0', '5s0', '6s3']}, 'player': 0
+'type': 'Discard', 'tile': '9s2', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '3s3', 'player': 1
+'type': 'Discard', 'tile': '3s0', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '5p2', 'player': 2
+'type': 'Discard', 'tile': '2s0', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '2p2', 'player': 3
+'type': 'Discard', 'tile': '3m0', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '6m3', 'player': 0
+'type': 'Discard', 'tile': '6m3', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '6s1', 'player': 1
+'type': 'Discard', 'tile': '6s1', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '8s2', 'player': 2
+'type': 'Discard', 'tile': '8s2', 'player': 2, 'connected': True}], 'ryuukyoku': False, 'ryuukyoku_tenpai': None, 'reaches': [], 'reach_turns': [], 'turns': [9, 11, 11, 10], 'deltas': [20, 0, -20, 0]
+'dealer': 2, 'hands': [['2m1', 'sw2', '3s1', '3s3', '8p0', '3m2', '6m2', '1m3', '5p0', '4s2', 'gd1', '3s0', '4m3'], ['wd2', '7p2', '1s1', '7s2', '9m0', '8s1', '9m2', '7s1', '2s1', 'ww3', '6s3', 'rd3', '8m0'], ['8m2', '3p2', 'wd0', '1p3', '2s3', '5p1', '1p2', '4s3', 'sw3', '7p1', '4m0', '3m1', '9p3'], ['9p2', '6p1', '6p0', 'ww1', '1m2', 'rd0', '8m1', 'rd1', '9s0', '1p0', '3p1', '1s2', '9p0']], 'round': ['南3', 0, 0], 'agari': [{'type': 'RON', 'player': 1, 'hand': ['6s3', '7s1', '7s2', '8s0', '8s1', '9s3', '5m0', '5m1', '6m1', '7m2', '8m0', '9m0', '9m2', '9m3'], 'fu': 40, 'points': 5200, 'limit': '', 'dora': ['9s1'], 'machi': ['5m1'], 'melds': [], 'closed': True, 'uradora': [], 'fromPlayer': 2, 'yaku': [['Riichi', 1], ['Akadora', 1], ['Uradora', 1]], 'yakuman': []}], 'events': [{'type': 'Dora', 'tile': '9s1'
+'type': 'Draw', 'tile': '5m2', 'player': 2
+'type': 'Discard', 'tile': 'sw3', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '7m0', 'player': 3
+'type': 'Discard', 'tile': '9s0', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '1m0', 'player': 0
+'type': 'Discard', 'tile': 'sw2', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '9s3', 'player': 1
+'type': 'Discard', 'tile': 'ww3', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '3p3', 'player': 2
+'type': 'Discard', 'tile': 'wd0', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '9m1', 'player': 3
+'type': 'Discard', 'tile': 'ww1', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '5s2', 'player': 0
+'type': 'Discard', 'tile': 'gd1', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '9m3', 'player': 1
+'type': 'Discard', 'tile': 'wd2', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': 'rd2', 'player': 2
+'type': 'Discard', 'tile': 'rd2', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '2s0', 'player': 3
+'type': 'Discard', 'tile': '6p1', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '5p2', 'player': 0
+'type': 'Discard', 'tile': '8p0', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '5m0', 'player': 1
+'type': 'Discard', 'tile': 'rd3', 'player': 1, 'connected': True
+'type': 'Call', 'meld': {'fromPlayer': 2, 'called': 2, 'type': 'pon', 'tiles': ['rd0', 'rd1', 'rd3']}, 'player': 3
+'type': 'Discard', 'tile': '6p0', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '4p0', 'player': 0
+'type': 'Discard', 'tile': '1m3', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '4s1', 'player': 1
+'type': 'Discard', 'tile': '7p2', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '2p2', 'player': 2
+'type': 'Discard', 'tile': '8m2', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '4p3', 'player': 3
+'type': 'Discard', 'tile': '1m2', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '4s0', 'player': 0
+'type': 'Discard', 'tile': '1m0', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '8s0', 'player': 1
+'type': 'Discard', 'tile': '4s1', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '8s2', 'player': 2
+'type': 'Discard', 'tile': '8s2', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '2s2', 'player': 3
+'type': 'Discard', 'tile': '2s2', 'player': 3, 'connected': True
+'type': 'Call', 'meld': {'fromPlayer': 3, 'type': 'chi', 'called': 0, 'tiles': ['2s2', '3s0', '4s0']}, 'player': 0
+'type': 'Discard', 'tile': '6m2', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': 'wd1', 'player': 1
+'type': 'Discard', 'tile': 'wd1', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '6p2', 'player': 2
+'type': 'Discard', 'tile': '9p3', 'player': 2, 'connected': True
+'type': 'Call', 'meld': {'fromPlayer': 3, 'called': 2, 'type': 'pon', 'tiles': ['9p0', '9p2', '9p3']}, 'player': 3
+'type': 'Discard', 'tile': '4p3', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '4m1', 'player': 0
+'type': 'Discard', 'tile': '4m1', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '7m2', 'player': 1
+'type': 'Discard', 'tile': '2s1', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '6s1', 'player': 2
+'type': 'Discard', 'tile': '2s3', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': 'ew1', 'player': 3
+'type': 'Discard', 'tile': 'ew1', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '3s2', 'player': 0
+'type': 'Discard', 'tile': '4p0', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '8p3', 'player': 1
+'type': 'Discard', 'tile': '8p3', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '5s0', 'player': 2
+'type': 'Discard', 'tile': '3p3', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': 'gd0', 'player': 3
+'type': 'Discard', 'tile': 'gd0', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '3p0', 'player': 0
+'type': 'Discard', 'tile': '3p0', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '2m0', 'player': 1
+'type': 'Discard', 'tile': '2m0', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '1m1', 'player': 2
+'type': 'Discard', 'tile': '1m1', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': 'ww2', 'player': 3
+'type': 'Discard', 'tile': 'ww2', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '2p1', 'player': 0
+'type': 'Discard', 'tile': '2p1', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '6m1', 'player': 1
+'type': 'Discard', 'tile': '1s1', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '3m3', 'player': 2
+'type': 'Discard', 'tile': '3m3', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '6p3', 'player': 3
+'type': 'Discard', 'tile': '2s0', 'player': 3, 'connected': True
+'type': 'Call', 'meld': {'fromPlayer': 3, 'type': 'chi', 'called': 0, 'tiles': ['2s0', '3s1', '4s2']}, 'player': 0
+'type': 'Discard', 'tile': '3s3', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '1s3', 'player': 1
+'type': 'Discard', 'tile': '1s3', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '5m1', 'player': 2
+'type': 'Discard', 'tile': '5m1', 'player': 2, 'connected': True}], 'ryuukyoku': False, 'ryuukyoku_tenpai': None, 'reaches': [2, 1], 'reach_turns': [9, 10], 'turns': [11, 11, 11, 11], 'deltas': [0, 72, -52, 0]
+'dealer': 3, 'hands': [['7p0', '4p0', '1p1', 'rd2', '4m2', '6p1', '8s2', '6p2', '1p2', 'sw1', '6s1', '9p0', '2s0'], ['4m0', '6s2', '4p2', 'sw0', '8p2', '7p3', '4m3', '2s3', 'gd3', 'ww1', '5p2', '5s3', '8m2'], ['rd1', '5m0', 'gd0', '4s0', '8p1', '1m0', 'rd0', '7p2', '4s3', '5p0', '9m3', '4m1', 'nw2'], ['6p3', '1m3', 'nw3', '8s0', '6p0', '8p3', '7m0', '2p1', '4p3', '5m1', '1s1', '5p3', 'wd1']], 'round': ['南4', 0, 0], 'agari': [{'type': 'TSUMO', 'player': 1, 'hand': ['5s3', '6s2', '7s3', '3p1', '4p2', '5p2', '7p3', '8p2', '9p2', '4m0', '4m3', '6m1', '7m2', '8m2'], 'fu': 20, 'points': 5200, 'limit': '', 'dora': ['6m0'], 'machi': ['3p1'], 'melds': [], 'closed': True, 'uradora': [], 'fromPlayer': 0, 'yaku': [['Riichi', 1], ['Menzen tsumo', 1], ['Pinfu', 1], ['Dora', 1], ['Uradora', 0]], 'yakuman': []}], 'events': [{'type': 'Dora', 'tile': '6m0'
+'type': 'Draw', 'tile': '3s0', 'player': 3
+'type': 'Discard', 'tile': 'nw3', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '8p0', 'player': 0
+'type': 'Discard', 'tile': '2s0', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '7m2', 'player': 1
+'type': 'Discard', 'tile': 'sw0', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '6m3', 'player': 2
+'type': 'Discard', 'tile': '1m0', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '2p0', 'player': 3
+'type': 'Discard', 'tile': '1m3', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': 'ww3', 'player': 0
+'type': 'Discard', 'tile': '4m2', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '6m1', 'player': 1
+'type': 'Discard', 'tile': 'gd3', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '8m1', 'player': 2
+'type': 'Discard', 'tile': 'gd0', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '1p3', 'player': 3
+'type': 'Discard', 'tile': '1p3', 'player': 3, 'connected': True
+'type': 'Call', 'meld': {'fromPlayer': 3, 'called': 2, 'type': 'pon', 'tiles': ['1p1', '1p2', '1p3']}, 'player': 0
+'type': 'Discard', 'tile': '6s1', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '7s3', 'player': 1
+'type': 'Discard', 'tile': '2s3', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '3s2', 'player': 2
+'type': 'Discard', 'tile': 'nw2', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': 'nw0', 'player': 3
+'type': 'Discard', 'tile': 'nw0', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '7m1', 'player': 0
+'type': 'Discard', 'tile': '7m1', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': 'sw2', 'player': 1
+'type': 'Discard', 'tile': 'sw2', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': 'gd1', 'player': 2
+'type': 'Discard', 'tile': 'gd1', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': 'ew0', 'player': 3
+'type': 'Discard', 'tile': 'ew0', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': 'nw1', 'player': 0
+'type': 'Discard', 'tile': '8s2', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '7p1', 'player': 1
+'type': 'Discard', 'tile': 'ww1', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '9s2', 'player': 2
+'type': 'Discard', 'tile': '9s2', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '9s1', 'player': 3
+'type': 'Discard', 'tile': 'wd1', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '1m2', 'player': 0
+'type': 'Discard', 'tile': '1m2', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '9m1', 'player': 1
+'type': 'Discard', 'tile': '9m1', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '4s2', 'player': 2
+'type': 'Discard', 'tile': '5p0', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': 'rd3', 'player': 3
+'type': 'Discard', 'tile': 'rd3', 'player': 3, 'connected': True
+'type': 'Call', 'meld': {'fromPlayer': 1, 'called': 2, 'type': 'pon', 'tiles': ['rd0', 'rd1', 'rd3']}, 'player': 2
+'type': 'Discard', 'tile': '9m3', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': '7m3', 'player': 3
+'type': 'Discard', 'tile': '1s1', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '5p1', 'player': 0
+'type': 'Discard', 'tile': 'rd2', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': 'ew2', 'player': 1
+'type': 'Discard', 'tile': 'ew2', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '2m3', 'player': 2
+'type': 'Discard', 'tile': '2m3', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': 'wd0', 'player': 3
+'type': 'Discard', 'tile': 'wd0', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '9m0', 'player': 0
+'type': 'Discard', 'tile': '9m0', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '9p2', 'player': 1
+'type': 'Discard', 'tile': '7p1', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '7s1', 'player': 2
+'type': 'Discard', 'tile': '7p2', 'player': 2, 'connected': True
+'type': 'Call', 'meld': {'fromPlayer': 3, 'type': 'chi', 'called': 1, 'tiles': ['6p3', '7p2', '8p3']}, 'player': 3
+'type': 'Discard', 'tile': '9s1', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': 'gd2', 'player': 0
+'type': 'Discard', 'tile': 'gd2', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '3s3', 'player': 1
+'type': 'Discard', 'tile': '3s3', 'player': 1, 'connected': True
+'type': 'Draw', 'tile': '2m2', 'player': 2
+'type': 'Discard', 'tile': '3s2', 'player': 2, 'connected': True
+'type': 'Draw', 'tile': 'ew1', 'player': 3
+'type': 'Discard', 'tile': 'ew1', 'player': 3, 'connected': True
+'type': 'Draw', 'tile': '9m2', 'player': 0
+'type': 'Discard', 'tile': '9m2', 'player': 0, 'connected': True
+'type': 'Draw', 'tile': '3p1', 'player': 1}], 'ryuukyoku': False, 'ryuukyoku_tenpai': None, 'reaches': [1], 'reach_turns': [8], 'turns': [10, 10, 10, 11], 'deltas': [-13, 62, -13, -26]}], 'owari': '371,17.0,403,50.0,158,-24.0,68,-43.0'}

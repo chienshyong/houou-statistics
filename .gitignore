@@ -1,0 +1,7 @@
+__pycache__
+.idea
+temp
+archive/
+download_logs/
+.vs
+.vscode
