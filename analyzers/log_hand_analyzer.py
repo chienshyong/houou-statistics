@@ -1,5 +1,5 @@
 from .log_analyzer import LogAnalyzer
-from analysis_utils import convertHai, convertTile, discards, draws, GetNextRealTag, GetStartingHands, getTilesFromCall
+from util.analysis_utils import convertHai, convertTile, discards, draws, GetNextRealTag, GetStartingHands, getTilesFromCall
 from abc import abstractmethod
 
 # Analyzer template that takes care of all the annoying work of gathering hands, discards, and calls. 

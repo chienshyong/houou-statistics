@@ -5,6 +5,7 @@ from collections import Counter
 # Analysis tools from https://github.com/Euophrys/phoenix-logs/tree/develop
 # Log format https://github.com/ApplySci/tenhou-log#log-format
 # Tiles number from 0 to 135, going from souzu, pinzu, manzu, wind and dragon. 16 : 5s0, 52 : 5p0, 88 : 5m0 are the akadora (Applysci notation)
+# Player 0 is the initial oya
 # DEFG = Discard by player 0123 respectively, TSUV = Tsumo by player 0123 respectively, m = meld, N = call
 # Melds are encoded, just call print(tenhou_decoder.Meld.decode(47178)) to view it, and getTilesFromCall() for analysis
 
@@ -257,28 +258,54 @@ dora_indication = [
 def GetDora(indicator):
     return dora_indication[indicator]
 
-# Convert amber notation hand into readable form
-def parseAmberNotation(hand):
+# Convert amber notation hand + calls or list into readable form.
+def parseAmberNotation(hand = None, calls = [], list = None):
     res = ""
-    for i in range(0,10):
-        res += str(i) * hand[i]
-    if len(res) > 0:
-        res += 's '
+    honor_map = ['E', 'S', 'W', 'N', 'H', 'G', 'R', 'Ghost']
+    
+    # Hand 
+    if hand:
+        for i in range(0,10):
+            res += str(i) * hand[i]
+        if len(res) > 0:
+            res += 's '
 
-    for i in range(11,20):
-        res += str(i%10) * hand[i]
-    if len(res) > 0:
-        if res[-1].isdigit():
-            res += 'p '
+        for i in range(11,20):
+            res += str(i%10) * hand[i]
+        if len(res) > 0:
+            if res[-1].isdigit():
+                res += 'p '
 
-    for i in range(21,30):
-        res += str(i%10) * hand[i]
-    if len(res) > 0:
-        if res[-1].isdigit():
-            res += 'm '
+        for i in range(21,30):
+            res += str(i%10) * hand[i]
+        if len(res) > 0:
+            if res[-1].isdigit():
+                res += 'm'
 
-    honor_map = ['E', 'S', 'W', 'N', 'Wh', 'G', 'R']
-    for i in range(31,38):
-        res += honor_map[i%10 - 1] * hand[i]
+        for i in range(31,38):
+            res += honor_map[i%10 - 1] * hand[i]
+
+    # Calls
+    for call in calls:
+        res += " ["
+        if call[0] < 30:
+            res += str(call[0]%10) + str(call[1]%10) + str(call[2]%10)
+            res += suit_characters[call[0]//10]
+        else:
+            c = honor_map[call[0]%10 - 1]
+            res += c * 3
+        res += "]"
+
+    #List
+    if list:
+        res += "["
+        for item in list:
+            if item < 30:
+                res += str(item%10) + suit_characters[item//10] + ','
+            else:
+                res += honor_map[item%10 - 1] + ','
+        res = res[:-1] + "]"
 
     return res
+
+# print(parseAmberNotation(list = [33,33,33,23,25]))

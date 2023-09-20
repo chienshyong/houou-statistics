@@ -1,5 +1,5 @@
 from .log_hand_analyzer import LogHandAnalyzer
-from analysis_utils import GetDora, convertTile, yaku_names
+from util.analysis_utils import GetDora, convertTile, yaku_names
 from collections import defaultdict, Counter
 
 # Reference analyzer from https://github.com/Euophrys/phoenix-logs/tree/develop
