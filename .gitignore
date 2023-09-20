@@ -5,3 +5,4 @@ archive/
 download_logs/
 .vs
 .vscode
+data/es4p.db

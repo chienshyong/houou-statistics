@@ -4,7 +4,7 @@ from collections import Counter
 
 # Analysis tools from https://github.com/Euophrys/phoenix-logs/tree/develop
 # Log format https://github.com/ApplySci/tenhou-log#log-format
-# Tiles number from 0 to 135, going from souzu, pinzu, manzu, wind and dragon. 16 : 5s0, 52 : 5p0, 88 : 5m0 are the akadora
+# Tiles number from 0 to 135, going from souzu, pinzu, manzu, wind and dragon. 16 : 5s0, 52 : 5p0, 88 : 5m0 are the akadora (Applysci notation)
 # DEFG = Discard by player 0123 respectively, TSUV = Tsumo by player 0123 respectively, m = meld, N = call
 # Melds are encoded, just call print(tenhou_decoder.Meld.decode(47178)) to view it, and getTilesFromCall() for analysis
 
@@ -18,25 +18,25 @@ tile_dict = {0: '1s0', 1: '1s1', 2: '1s2', 3: '1s3', 4: '2s0', 5: '2s1', 6: '2s2
         112: 'sw0', 113: 'sw1', 114: 'sw2', 115: 'sw3', 116: 'ww0', 117: 'ww1', 118: 'ww2', 119: 'ww3', 120: 'nw0', 121: 'nw1', 122: 'nw2', 123: 'nw3', 124: 'wd0', 125: 'wd1', 126: 'wd2',
         127: 'wd3', 128: 'gd0', 129: 'gd1', 130: 'gd2', 131: 'gd3', 132: 'rd0', 133: 'rd1', 134: 'rd2'}
 
-tenhou_tile_to_array_index_lookup = [
-    1,1,1,1,2,2,2,2,3,3,3,3,4,4,4,4,5,5,5,5,6,6,6,6,7,7,7,7,8,8,8,8,9,9,9,9,
+# For analysis use amber notation. 1-9 souzu, 11-19 pinzu, 21-29 manzu, 31-34 winds, 35-37 dragons
+# Hand format: Counter({16: 2, 17: 1, 14: 1, 32: 1, 19: 1, 18: 1, 33: 1, 34: 1, 15: 1, 11: 0, 37: 0, 24: 0, 8: 0, 6: 0, 2: 0, 27: 0, 21: 0, 29: 0, 36: 0})
+
+tenhou_tile_to_array_index_lookup = [1,1,1,1,2,2,2,2,3,3,3,3,4,4,4,4,5,5,5,5,6,6,6,6,7,7,7,7,8,8,8,8,9,9,9,9,
     11,11,11,11,12,12,12,12,13,13,13,13,14,14,14,14,15,15,15,15,16,16,16,16,17,17,17,17,18,18,18,18,19,19,19,19,
     21,21,21,21,22,22,22,22,23,23,23,23,24,24,24,24,25,25,25,25,26,26,26,26,27,27,27,27,28,28,28,28,29,29,29,29,
     31,31,31,31,32,32,32,32,33,33,33,33,34,34,34,34,35,35,35,35,36,36,36,36,37,37,37,37
 ]
 
-yaku_names = [
-    "Tsumo", "Riichi", "Ippatsu", "Chankan", "Rinshan", "Haitei", "Houtei", "Pinfu", "Tanyao", "Iipeikou",
+discards = ['D', 'E', 'F', 'G']
+draws = ['T', 'U', 'V', 'W']
+suit_characters = ['s', 'p', 'm', 'z']
+yaku_names = ["Tsumo", "Riichi", "Ippatsu", "Chankan", "Rinshan", "Haitei", "Houtei", "Pinfu", "Tanyao", "Iipeikou",
     "Yakuhai Wind", "Yakuhai Wind", "Yakuhai Wind", "Yakuhai Wind", "Yakuhai Wind", "Yakuhai Wind", "Yakuhai Wind", "Yakuhai Wind",
     "Yakuhai Dragon", "Yakuhai Dragon", "Yakuhai Dragon", "Double Riichi", "Chiitoitsu", "Chanta", "Itsu", "Doujun", "Doukou",
     "Sankantsu", "Toitoi", "Sanankou", "Shousangen", "Honroutou", "Ryanpeikou", "Junchan", "Honitsu", "Chinitsu",
     "Renhou", "Tenhou", "Chihou", "Daisangen", "Suuankou", "Suuankou", "Tsuuiisou", "Ryuuiisou", "Chinroutou", "Chuuren", "Chuuren",
     "Kokushi", "Kokushi", "Daisuushi", "Shousuushi", "Suukantsu", "Dora", "Uradora", "Akadora"
 ]
-
-discards = ['D', 'E', 'F', 'G']
-draws = ['T', 'U', 'V', 'W']
-suit_characters = ['m', 'p', 's', 'z'] #is this right? ['s', 'p', 'm', 'z']?
 
 def convertTile(tile):
     return tenhou_tile_to_array_index_lookup[int(tile)]
@@ -256,3 +256,29 @@ dora_indication = [
 
 def GetDora(indicator):
     return dora_indication[indicator]
+
+# Convert amber notation hand into readable form
+def parseAmberNotation(hand):
+    res = ""
+    for i in range(0,10):
+        res += str(i) * hand[i]
+    if len(res) > 0:
+        res += 's '
+
+    for i in range(11,20):
+        res += str(i%10) * hand[i]
+    if len(res) > 0:
+        if res[-1].isdigit():
+            res += 'p '
+
+    for i in range(21,30):
+        res += str(i%10) * hand[i]
+    if len(res) > 0:
+        if res[-1].isdigit():
+            res += 'm '
+
+    honor_map = ['E', 'S', 'W', 'N', 'Wh', 'G', 'R']
+    for i in range(31,38):
+        res += honor_map[i%10 - 1] * hand[i]
+
+    return res
