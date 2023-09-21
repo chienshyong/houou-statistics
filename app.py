@@ -12,12 +12,13 @@ analyzer = Mentanpin()
 
 allowed_types = ["169", "225", "185"] # Not sure what these are but I will leave it
 log_database = r'C:\Users\leecs1\Downloads\es4p.db'
+log_database = 'data\es4p.db'
 decompress = bz2.decompress
 XML = etree.XML
 
 with sqlite3.connect(log_database) as conn:
     cursor = conn.cursor()
-    rowcount = 50000
+    rowcount = 1000
     cursor.execute(f'SELECT * FROM logs LIMIT {rowcount}')
 
     for i in tqdm(range(rowcount)):

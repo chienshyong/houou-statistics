@@ -1,7 +1,5 @@
 # Hand shanten calculator.
-# Would like to optimize this better as it is a bottleneck. -> make it handle smaller hands. then can remove guaranteeed runs & trips and be faster.
 # Use amber notation: myhand = Counter({1:1, 2:1, 3:1, 5:1, 6:1, 7:1, 12:1, 13:2, 17:2, 21:1, 22:1}). calls = [[23,24,25],[33,33,33]]
-# Let a triplet of 38 "The ghost dragon" represent melds for shanten calculation.
 
 hand = []
 completeSets = 0
@@ -10,21 +8,18 @@ partialSets = 0
 bestShanten = 0
 mininumShanten = 0
 
-def calculateStandardShantenOptimized(handToCheck, mininumShanten_ = -1):
-
 def calculateMinimumShanten(handToCheck, mininumShanten = -1):
-    hand_copy = handToCheck.copy()
-    if sum(handToCheck.values()) < 13: #If melds are present, skip chiitoi and kokushi
-        return calculateStandardShanten(hand_copy, mininumShanten)
+    if sum(handToCheck.values()) < 13: #If melds are present, skip chiitoi
+        return calculateStandardShantenOptimized(handToCheck, mininumShanten)
     
-    chiitoiShanten = calculateChiitoitsuShanten(hand_copy)
-    kokushiShanten = calculateKokushiShanten(hand_copy)
-    if chiitoiShanten == -1 or kokushiShanten == -1:
+    chiitoiShanten = calculateChiitoitsuShanten(handToCheck)
+    if chiitoiShanten == -1:
         return -1
+    
+    standardShanten = calculateStandardShantenOptimized(handToCheck, mininumShanten)
+    return min(standardShanten, chiitoiShanten)
 
-    standardShanten = calculateStandardShanten(hand_copy, mininumShanten)
-    return min(standardShanten, chiitoiShanten, kokushiShanten)
-
+# Original algorithm from Euophrys
 def calculateStandardShanten(handToCheck, mininumShanten_ = -1):
     global hand
     global mininumShanten
@@ -33,7 +28,7 @@ def calculateStandardShanten(handToCheck, mininumShanten_ = -1):
     global partialSets
     global bestShanten
 
-    hand = handToCheck
+    hand = handToCheck.copy()
     mininumShanten = mininumShanten_
 
     def removeCompletedSets(i):
@@ -45,6 +40,7 @@ def calculateStandardShanten(handToCheck, mininumShanten_ = -1):
         global bestShanten
 
         if bestShanten <= mininumShanten: return
+
         # Skip to the next tile that exists in the hand.
         while i < 39 and hand[i] == 0: i += 1
 
@@ -85,7 +81,7 @@ def calculateStandardShanten(handToCheck, mininumShanten_ = -1):
         global bestShanten
 
         if bestShanten <= mininumShanten: return
-        if completeSets < 2: return
+        #if completeSets < 2: return
 
         # Skip to the next tile that exists in the hand
         while i < 39 and hand[i] == 0: i += 1
@@ -149,6 +145,200 @@ def calculateStandardShanten(handToCheck, mininumShanten_ = -1):
     # Check shanten when there's nothing used as a pair
     removeCompletedSets(1)
 
+    return bestShanten
+
+# Takes some shortcuts but gets 99% correct. Almost twice as fast.
+def calculateStandardShantenOptimized(handToCheck, mininumShanten_ = -1):
+    global hand
+    global mininumShanten
+    global completeSets
+    global pair
+    global partialSets
+    global bestShanten
+
+    hand = handToCheck.copy()
+    mininumShanten = mininumShanten_
+    tilesinhand = [key for key, count in hand.items() if count != 0]
+
+    # Initialize variables
+    completeSets = (14 - sum(handToCheck.values())) // 3
+    pair = 0
+    partialSets = 0
+    bestShanten = 8
+
+    # Attempt to lock in pair. Start with trying to find lone pair, if not, take it from a joint (neighbors < 2)
+    pairLocked = False
+    for i in range(31,38):
+        if pairLocked: break
+        if hand[i] == 2:
+            pair = 1
+            hand[i] -= 2
+            pairLocked = True
+
+    for i in range(1,30):
+        if pairLocked: break
+        if hand[i] == 2 and hand[i-2] + hand[i-1] + hand[i+1] + hand[i+2] == 0:
+            pair = 1
+            hand[i] -= 2
+            pairLocked = True
+
+    for i in range(1,30):
+        if pairLocked: break
+        if hand[i] == 2 and hand[i-2] + hand[i-1] + hand[i+1] + hand[i+2] == 1:
+            pair = 1
+            hand[i] -= 2
+            pairLocked = True
+
+    #Remove any ankou of honors
+    for i in range(31,38):
+        if hand[i] >= 3:
+            completeSets += 1
+            hand[i] -= 3
+
+    #If a triplet has no neighbors, it is always be correct to use it as a triple. If pair locked, 1 neighbor can also.
+    for i in range(1,30):
+        if hand[i] >= 3:
+            if hand[i-1] + hand[i+1] == 0:
+                completeSets += 1
+                hand[i] -= 3
+            if hand[i-1] + hand[i+1] == 1 and pairLocked:
+                completeSets += 1
+                hand[i] -= 3
+        
+    #If a sequence has no neighbors and cannot be a triplet
+    #Not always correct eg. 134457 can be 3 blocks. But functionally, will rarely use it as 3 blocks so its OK
+    if pairLocked:
+        for i in range(1,28):
+            if hand[i-1] == 0 and hand[i] != 0 and hand[i+1] != 0 and hand[i+2] != 0 and hand[i+3] == 0:
+                if hand[i] < 3 and hand[i+1] < 3 and hand[i+2] < 3:
+                    completeSets += 1
+                    hand[i] -= 1
+                    hand[i + 1] -= 1
+                    hand[i + 2] -= 1
+                    if hand[i-1] != 0 and hand[i] != 0 and hand[i+1] != 0:
+                        completeSets += 1
+                        hand[i] -= 1
+                        hand[i + 1] -= 1
+                        hand[i + 2] -= 1
+    else:
+        for i in range(1,28):
+            if hand[i-1] == 0 and hand[i] == 1 and hand[i+1] == 1 and hand[i+2] == 1 and hand[i+3] == 0:
+                completeSets += 1
+                hand[i] -= 1
+                hand[i + 1] -= 1
+                hand[i + 2] -= 1
+
+    def removeCompletedSets(i):
+        global hand
+        global mininumShanten
+        global completeSets
+        global pair
+        global partialSets
+        global bestShanten
+
+        if bestShanten <= mininumShanten: return
+        # Skip to the next tile that exists in the hand.
+        while i < 39 and hand[i] == 0: i += 1
+
+        if i >= 39:
+            # We've gone through the whole hand, now check for partial sets.
+            removePotentialSets(1)
+            return
+
+        # Pung
+        if hand[i] >= 3:
+            completeSets += 1
+            hand[i] -= 3
+            removeCompletedSets(i)
+            hand[i] += 3
+            completeSets -= 1
+
+        # Chow
+        if i < 30 and hand[i + 1] != 0 and hand[i + 2] != 0:
+            completeSets += 1
+            hand[i] -= 1
+            hand[i + 1] -= 1
+            hand[i + 2] -= 1
+            removeCompletedSets(i)
+            hand[i] += 1
+            hand[i + 1] += 1
+            hand[i + 2] += 1
+            completeSets -= 1
+        
+        # Check all alternative hand configurations
+        removeCompletedSets(i + 1)
+
+    def removePotentialSets(i):
+        global hand
+        global mininumShanten
+        global completeSets
+        global pair
+        global partialSets
+        global bestShanten
+
+        if bestShanten <= mininumShanten: return
+
+        # Skip to the next tile that exists in the hand
+        while i < 39 and hand[i] == 0: i += 1
+
+        if i >= 39:
+            # We've checked everything. See if this shanten is better than the current best.
+            currentShanten = 8 - (completeSets * 2) - partialSets - pair
+            if currentShanten < bestShanten:
+                bestShanten = currentShanten
+            
+            return
+        
+        # A standard hand will only ever have four groups plus a pair.
+        if completeSets + partialSets < 4:
+            # Pair
+            if hand[i] == 2:
+                partialSets += 1
+                hand[i] -= 2
+                removePotentialSets(i)
+                hand[i] += 2
+                partialSets -= 1
+            
+            # Edge or Side wait protorun
+            if i < 30 and hand[i + 1] != 0:
+                partialSets += 1
+                hand[i] -= 1
+                hand[i + 1] -= 1
+                removePotentialSets(i)
+                hand[i] += 1
+                hand[i + 1] += 1
+                partialSets -= 1
+            
+            # Closed wait protorun
+            if i < 30 and i % 10 <= 8 and hand[i + 2] != 0:
+                partialSets += 1
+                hand[i] -= 1
+                hand[i + 2] -= 1
+                removePotentialSets(i)
+                hand[i] += 1
+                hand[i + 2] += 1
+                partialSets -= 1
+
+        # Check all alternative hand configurations
+        removePotentialSets(i + 1)
+
+    # 1 iteration is enough if pair is found.
+    if pairLocked:
+        removeCompletedSets(1)
+        return bestShanten
+
+    # Fallback. Hopefully hand is very small at this point without many sets left.
+    # Loop through hand, removing all pair candidates and checking their shanten.
+    for i in tilesinhand:
+        if hand[i] >= 2:
+            pair += 1
+            hand[i] -= 2
+            removeCompletedSets(1)
+            hand[i] += 2
+            pair -= 1
+
+    # Check shanten when there's nothing used as a pair.
+    removeCompletedSets(1)
     return bestShanten
 
 def calculateChiitoitsuShanten(handToCheck):
@@ -186,7 +376,7 @@ def calculateKokushiShanten(handToCheck):
                
     return 13 - uniqueTiles - hasPair
 
-def calculateUkeire(hand, baseShanten = -2):
+def calculateUkeire(hand, calls = [], baseShanten = -2):
     if baseShanten == -2:
         baseShanten = calculateMinimumShanten(hand)
     
@@ -216,202 +406,29 @@ def calculateUkeire(hand, baseShanten = -2):
             if hand[tile] == 1 or hand[tile] == 2:
                 potentialTiles.append(tile)
 
-    for addedTile in potentialTiles:
-        if addedTile % 10 == 0: continue
-        
-        hand[addedTile] += 1
+    flatcalls = [item for row in calls for item in row]
 
+    for addedTile in potentialTiles:
+        hand[addedTile] += 1
         if calculateMinimumShanten(hand, mininumShanten = baseShanten - 1) < baseShanten:
             #Improves shanten. Add the number of remaining tiles to the ukeire count
-            value += 5 - hand[addedTile]
+            value += 5 - hand[addedTile] - flatcalls.count(addedTile)
             tiles.append(addedTile)
-
         hand[addedTile] -= 1
+
+    if tiles == []:
+        tiles = [38] #Fifth tile case tenpai, eg. 345s GGGG
 
     return value, tiles
 
 def isTenpai(hand):
-    return calculateMinimumShanten(hand) == 0
+    return calculateMinimumShanten(hand, mininumShanten = 0) == 0
 
-from collections import Counter
-from tqdm import tqdm
-import analysis_utils as u
+# from collections import Counter
+# from tqdm import tqdm
+# import analysis_utils as u
 
-# for i in tqdm(range(1000)):
-#     myhand = Counter({36: 3, 18: 2, 4: 1, 24: 1, 22: 1, 23: 1, 13: 1, 12: 1, 14: 1, 6: 1})
-#     calculateUkeire(myhand, calls=[])
-
-# myhand = Counter({29: 0, 18: 2, 4: 1, 24: 1, 22: 1, 23: 1, 13: 1, 12: 1, 14: 1, 6: 1})
+# myhand = Counter({17: 2, 14: 2, 2: 1, 19: 1, 13: 1, 4: 1, 28: 1, 3: 1, 11: 1, 7: 1, 15: 1, 36: 0, 33: 0, 31: 0, 21: 0})
 # print(u.parseAmberNotation(myhand))
-# print(calculateUkeire(myhand, calls=[[32,32,32]]))
-
-
-    global hand
-    global mininumShanten
-    global completeSets
-    global pair
-    global partialSets
-    global bestShanten
-
-    hand = handToCheck
-    mininumShanten = mininumShanten_
-    tilesinhand = [key for key, count in hand.items() if count != 0]
-
-    # Initialize variables
-    completeSets = (14 - sum(handToCheck.values())) // 3
-    pair = 0
-    partialSets = 0
-    bestShanten = 8
-    
-    def removeDefiniteSets():
-        global hand
-        global mininumShanten
-        global completeSets
-        global pair
-        global partialSets
-        global bestShanten
-
-        for i in range(31,37):
-            if hand[i] >= 3:
-                completeSets += 1
-                hand[i] -= 3
-
-        #If a triplet has <2 neighbors, it should always be correct to use it as a triple. I could be wrong.
-        for i in range(1,30):
-            if hand[i] >= 3:
-                if hand[i-1] + hand[i+1] < 2:
-                    completeSets += 1
-                    hand[i] -= 3
-        
-        #If a sequence is outside, ie one side has no neighbor (eg 123 in 12334455) it should always be correct to use it, unless one can be a triplet.
-        for i in range(1,30):
-            if hand[i] != 0 and hand[i+1] != 0 and hand[i+2] != 0 and hand[i] < 3 and hand[i+1] < 3 and hand[i+2] < 3:
-                if hand[i-1] == 0 or hand[i+3] == 0:
-                    completeSets += 1
-                    hand[i] -= 1
-                    hand[i + 1] -= 1
-                    hand[i + 2] -= 1
-
-        #Run twice to get implied lone sequences.
-        for i in range(1,30):
-            if hand[i] != 1 and hand[i+1] != 0 and hand[i+2] != 0 and hand[i] < 3 and hand[i+1] < 3 and hand[i+2] < 3:
-                if hand[i-1] == 0 or hand[i+3] == 0:
-                    completeSets += 1
-                    hand[i] -= 1
-                    hand[i + 1] -= 1
-                    hand[i + 2] -= 1
-
-    def removeCompletedSets(i):
-        global hand
-        global mininumShanten
-        global completeSets
-        global pair
-        global partialSets
-        global bestShanten
-
-        if bestShanten <= mininumShanten: return
-        # Skip to the next tile that exists in the hand.
-        while i < 39 and hand[i] == 0: i += 1
-
-        if i >= 39:
-            # We've gone through the whole hand, now check for partial sets.
-            removePotentialSets(1)
-            return
-
-        # Pung
-        if hand[i] >= 3:
-            completeSets += 1
-            hand[i] -= 3
-            removeCompletedSets(i)
-            hand[i] += 3
-            completeSets -= 1
-
-        # Chow
-        if i < 30 and hand[i + 1] != 0 and hand[i + 2] != 0:
-            completeSets += 1
-            hand[i] -= 1
-            hand[i + 1] -= 1
-            hand[i + 2] -= 1
-            removeCompletedSets(i)
-            hand[i] += 1
-            hand[i + 1] += 1
-            hand[i + 2] += 1
-            completeSets -= 1
-        
-        # Check all alternative hand configurations
-        removeCompletedSets(i + 1)
-
-    def removePotentialSets(i):
-        global hand
-        global mininumShanten
-        global completeSets
-        global pair
-        global partialSets
-        global bestShanten
-
-        if bestShanten <= mininumShanten: return
-        if completeSets < 2: return
-
-        # Skip to the next tile that exists in the hand
-        while i < 39 and hand[i] == 0: i += 1
-
-        if i >= 39:
-            # We've checked everything. See if this shanten is better than the current best.
-            currentShanten = 8 - (completeSets * 2) - partialSets - pair
-            if currentShanten < bestShanten:
-                bestShanten = currentShanten
-            
-            return
-        
-        # A standard hand will only ever have four groups plus a pair.
-        if completeSets + partialSets < 4:
-            # Pair
-            if hand[i] == 2:
-                partialSets += 1
-                hand[i] -= 2
-                removePotentialSets(i)
-                hand[i] += 2
-                partialSets -= 1
-            
-            # Edge or Side wait protorun
-            if i < 30 and hand[i + 1] != 0:
-                partialSets += 1
-                hand[i] -= 1
-                hand[i + 1] -= 1
-                removePotentialSets(i)
-                hand[i] += 1
-                hand[i + 1] += 1
-                partialSets -= 1
-            
-            # Closed wait protorun
-            if i < 30 and i % 10 <= 8 and hand[i + 2] != 0:
-                partialSets += 1
-                hand[i] -= 1
-                hand[i + 2] -= 1
-                removePotentialSets(i)
-                hand[i] += 1
-                hand[i + 2] += 1
-                partialSets -= 1
-
-        # Check all alternative hand configurations
-        removePotentialSets(i + 1)
-
-    removeDefiniteSets()
-
-    # Fallback. Hopefully hand is very small at this point without any sets left.
-    # Loop through hand, removing all pair candidates and checking their shanten
-    for i in tilesinhand:
-        if hand[i] >= 2:
-            pair += 1
-            hand[i] -= 2
-            removeCompletedSets(1)
-            hand[i] += 2
-            pair -= 1
-
-    # Check shanten when there's nothing used as a pair
-    removeCompletedSets(1)
-    return bestShanten
-
-myhand = Counter({29: 0, 18: 2, 4: 1, 24: 1, 22: 1, 23: 1, 13: 1, 12: 1, 14: 1, 6: 1})
-print(u.parseAmberNotation(myhand))
-print(calculateStandardShantenOptimized(myhand))
+# print(calculateStandardShanten(myhand))
+# print(calculateStandardShantenOptimized(myhand))

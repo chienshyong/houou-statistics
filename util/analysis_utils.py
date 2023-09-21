@@ -280,7 +280,7 @@ def parseAmberNotation(hand = None, calls = [], list = None):
             res += str(i%10) * hand[i]
         if len(res) > 0:
             if res[-1].isdigit():
-                res += 'm'
+                res += 'm '
 
         for i in range(31,38):
             res += honor_map[i%10 - 1] * hand[i]
@@ -297,7 +297,7 @@ def parseAmberNotation(hand = None, calls = [], list = None):
 
     #List
     if list:
-        res += "["
+        res += " ["
         for item in list:
             if item < 30:
                 res += str(item%10) + suit_characters[item//10] + ','

@@ -1,10 +1,10 @@
 Wait,2 Suits,2 Suits 1 Honor
-Same Suit,475,130,
-Different Suit,435,121,
-Multiple Suit/Honor,98,30
+Same Suit,26001,6981,
+Different Suit,22167,6414,
+Multiple Suit/Honor,6478,1396
 
 Wait,2 Same Suit 1 Diff Suit
-Twice Called Suit,12,
-Once Called Suit,32,
-Different Suit,66,
-Multiple Suit/Honor,13,
+Twice Called Suit,931,
+Once Called Suit,1560,
+Different Suit,3125,
+Multiple Suit/Honor,762,

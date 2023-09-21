@@ -32,7 +32,7 @@ class Mentanpin(LogHandAnalyzer):
     def TileDiscarded(self, who, tile, tsumogiri, element):
         super().TileDiscarded(who, tile, tsumogiri, element)
         if(len(self.calls[who]) >= 2) and not self.tenpai[who]:
-            if sh.isTenpai(self.hands[who], self.calls[who]):
+            if sh.isTenpai(self.hands[who]):
                 self.tenpai[who] = True
                 ukeire, utiles = sh.calculateUkeire(self.hands[who], self.calls[who], baseShanten = 0)
 
