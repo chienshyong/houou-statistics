@@ -288,12 +288,11 @@ def parseAmberNotation(hand = None, calls = [], list = None):
     # Calls
     for call in calls:
         res += " ["
-        if call[0] < 30:
-            res += str(call[0]%10) + str(call[1]%10) + str(call[2]%10)
-            res += suit_characters[call[0]//10]
-        else:
-            c = honor_map[call[0]%10 - 1]
-            res += c * 3
+        for item in call:
+            if item < 30:
+                res += str(item%10) + suit_characters[item//10] + ','
+            else:
+                res += honor_map[item%10 - 1] + ','
         res += "]"
 
     #List
