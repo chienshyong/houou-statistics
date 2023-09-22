@@ -1,8 +1,4 @@
 __pycache__
-.idea
-temp
-archive/
-download_logs/
 .vs
 .vscode
 data/es4p.db

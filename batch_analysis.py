@@ -8,9 +8,9 @@ from lxml import etree
 from tqdm import tqdm
 import cProfile
 
-from analyzers.pond_traits import PondTraits
+from analyzers.mentanpin import Mentanpin
 
-analyzers = [PondTraits()]
+analyzers = [Mentanpin()]
 allowed_types = ["169", "225", "185"]
 log_database = r'C:\Users\leecs1\Downloads\es4p.db'
 
@@ -22,10 +22,11 @@ def RunAnalysis():
         cursor = conn.cursor()
         cursor.execute('SELECT COUNT(*) FROM logs')
         rowcount = cursor.fetchone()[0]
-        cursor.execute('SELECT * FROM logs LIMIT 1000')
+        rowcount = 1000
+        cursor.execute(f'SELECT * FROM logs LIMIT {rowcount}')
         last_print = 0
 
-        for i in tqdm(range(1000), ncols=80):
+        for i in tqdm(range(rowcount), ncols=80):
             log = cursor.fetchone()
             if log is None:
                 break

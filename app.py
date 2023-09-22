@@ -7,11 +7,9 @@ import util.analysis_utils as u
 import util.shanten as s
 
 # Change this
-from analyzers.mentanpin import Mentanpin
+from analyzers.riichi_wait_distribution import RiichiWaitDistribution
 from util.shanten_benchmark import ShantenBenchmark
-analyzer = ShantenBenchmark()
-
-
+analyzer = RiichiWaitDistribution()
 
 allowed_types = ["169", "225", "185"] # Not sure what these are but I will leave it
 log_database = r'C:\Users\leecs1\Downloads\es4p.db'
@@ -21,10 +19,10 @@ XML = etree.XML
 
 with sqlite3.connect(log_database) as conn:
     cursor = conn.cursor()
-    rowcount = 500
+    rowcount = 1000
     cursor.execute(f'SELECT * FROM logs LIMIT {rowcount}')
 
-    for i in tqdm(range(rowcount)):
+    for i in tqdm(range(rowcount), ncols=120):
         log = cursor.fetchone()
         if log is None:
             break
@@ -37,8 +35,8 @@ with sqlite3.connect(log_database) as conn:
             try:
                 analyzer.ParseLog(logxml, log[0])
             except Exception as error:
-                input(f"Error in log {i}: {error}")
+                print(f"Error in log {i}: {error}")
                 print(f"Hands: {analyzer.hands}")
                 print(f"Calls: {analyzer.calls}")
 
-    analyzer.PrintResults()
+    #analyzer.PrintResults()

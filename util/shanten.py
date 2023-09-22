@@ -459,7 +459,7 @@ def calculateStandardShantenBacktrack(handToCheck, mininumShanten_ = -1):
 
         currentShanten = 8 - (completeSets * 2) - partialSets - pair
 
-        if currentShanten <= mininumShanten: return currentShanten
+        if currentShanten <= mininumShanten: return mininumShanten
         if currentShanten < bestShanten:
             bestShanten = currentShanten
 
@@ -510,6 +510,6 @@ def calculateKokushiShanten(handToCheck):
 # from tqdm import tqdm
 # import analysis_utils as u
 
-# myhand = Counter({23: 3, 21: 2, 17: 2, 22: 1, 25: 1, 26: 1, 27: 1, 28: 1, 15: 1, 8: 0, 37: 0, 31: 0, 5: 0, 12: 0})
+# myhand = Counter({29: 3, 4: 2, 18: 2, 24: 1, 22: 1, 23: 1, 13: 1, 12: 1, 14: 1, 6: 1, 19: 0, 31: 0, 16: 0, 37: 0, 21: 0})
 # print(u.parseAmberNotation(myhand))
 # print(calculateUkeire(myhand))
