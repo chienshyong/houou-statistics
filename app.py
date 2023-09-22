@@ -19,7 +19,7 @@ XML = etree.XML
 
 with sqlite3.connect(log_database) as conn:
     cursor = conn.cursor()
-    rowcount = 1000
+    rowcount = 12000
     cursor.execute(f'SELECT * FROM logs LIMIT {rowcount}')
 
     for i in tqdm(range(rowcount), ncols=120):
@@ -39,4 +39,4 @@ with sqlite3.connect(log_database) as conn:
                 print(f"Hands: {analyzer.hands}")
                 print(f"Calls: {analyzer.calls}")
 
-    #analyzer.PrintResults()
+    analyzer.PrintResults()

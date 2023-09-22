@@ -9,7 +9,7 @@ class LogHandAnalyzer(LogAnalyzer):
     def __init__(self):
         self.hands = [[], [], [], []] # Stores the hands, calls, discards for one hand only, from 0th to 3rd player.
         self.calls = [[], [], [], []]
-        self.discards = [[], [], [], []]
+        self.discards = [[], [], [], []] # Define turn as len(discards[0])
         self.last_draw = [50,50,50,50]
         self.end_round = False
         self.current_log_id = ""
