@@ -2,4 +2,3 @@ __pycache__
 .vs
 .vscode
 data/es4p.db
-results/*.xlsx

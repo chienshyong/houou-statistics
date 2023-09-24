@@ -40,6 +40,7 @@ class RiichiWaitDistribution(LogHandAnalyzer):
         if len(wait) == 3:
             if all(i//10 == wait[0]//10 for i in wait) and wait[0] + 3 == wait[1] and wait[1] + 3 == wait[2]:
                     self.riichiwait_df.loc[wait[0]%10,"sanmenchan"] += 1
+                    return
         if len(wait) >= 3:
             self.complex_waits += 1
             return
