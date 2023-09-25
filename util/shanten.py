@@ -505,11 +505,3 @@ def calculateKokushiShanten(handToCheck):
                     hasPair = 1
                
     return 13 - uniqueTiles - hasPair
-
-# from collections import Counter
-# from tqdm import tqdm
-# import analysis_utils as u
-
-# myhand = Counter({29: 3, 4: 2, 18: 2, 24: 1, 22: 1, 23: 1, 13: 1, 12: 1, 14: 1, 6: 1, 19: 0, 31: 0, 16: 0, 37: 0, 21: 0})
-# print(u.parseAmberNotation(myhand))
-# print(calculateUkeire(myhand))

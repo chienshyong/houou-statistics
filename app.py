@@ -7,13 +7,13 @@ import util.analysis_utils as u
 import util.shanten as s
 import traceback
 
-# Change this
-from analyzers.riichi_winrate import RiichiWinrate
-analyzer = RiichiWinrate()
+# Change this to the analyzer being used
+from analyzers.wait_distribution import WaitDistribution
+analyzer = WaitDistribution()
 
 allowed_types = ["169", "225", "185"] # Not sure what these are but I will leave it
-#log_database = r'C:\Users\leecs1\Downloads\es4p.db'
-log_database = 'data\es4p.db'
+log_database = r'C:\Users\leecs1\Downloads\es4p.db'
+#log_database = 'data\es4p.db'
 decompress = bz2.decompress
 XML = etree.XML
 
@@ -22,7 +22,7 @@ with sqlite3.connect(log_database) as conn:
     cursor.execute(f'SELECT COUNT(*) FROM logs')
 
     # Max: 893440
-    rowcount = 50000
+    rowcount = 100
     cursor.execute(f'SELECT * FROM logs LIMIT {rowcount}')
     # cursor.fetchmany(157)
 
@@ -41,6 +41,6 @@ with sqlite3.connect(log_database) as conn:
                 analyzer.ParseLog(logxml, log[0])
             except Exception as error:
                 print(traceback.format_exc())
-                input(f"Error in log {i}: {error}")
+                print(f"Error in log {i}: {error}")
 
-    analyzer.PrintResults()
+    #analyzer.PrintResults()

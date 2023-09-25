@@ -1,5 +1,5 @@
 from .log_analyzer import LogAnalyzer
-from util.analysis_utils import convertHai, convertTile, discards, draws, GetNextRealTag, GetStartingHands, getTilesFromCall
+from util.analysis_utils import convertHai, convertTile, discards, draws, GetNextRealTag, GetStartingHands, getTilesFromCall, GetDora
 from abc import abstractmethod
 
 # Analyzer template that takes care of all the annoying work of gathering hands, discards, and calls. 
@@ -7,13 +7,15 @@ from abc import abstractmethod
 
 class LogHandAnalyzer(LogAnalyzer):
     def __init__(self):
-        self.hands = [[], [], [], []] # Stores the hands, calls, discards for one hand only, from 0th to 3rd player.
-        self.calls = [[], [], [], []]
-        self.discards = [[], [], [], []] # Define turn as len(discards[0])
-        self.last_draw = [50,50,50,50]
-        self.end_round = False
         self.current_log_id = ""
         self.ignore_calls = False
+        self.hands = [[], [], [], []] # Stores the hands, calls, discards for one hand only, from 0th to 3rd player.
+        self.calls = [[], [], [], []]
+        self.discards = [[], [], [], []] # Define turn as len(discards[oya])
+        self.last_draw = [50,50,50,50]
+        self.end_round = False
+        self.scores = [[],[],[],[]]
+        self.dora = []
 
     def ParseLog(self, log, log_id):
         self.current_log_id = log_id
@@ -47,9 +49,6 @@ class LogHandAnalyzer(LogAnalyzer):
                 
                 elif element.tag == "REACH":
                     self.RiichiCalled(int(element.attrib["who"]), int(element.attrib["step"]), element)
-                
-                elif element.tag == "INIT":
-                    break
 
                 elif element.tag == "AGARI":
                     self.Win(element)
@@ -69,13 +68,17 @@ class LogHandAnalyzer(LogAnalyzer):
         self.ReplayComplete()
     
     def RoundStarted(self, init):
-        self.hands = GetStartingHands(init)
+        self.hands = GetStartingHands(init) 
         self.calls = [[], [], [], []]
         self.discards = [[], [], [], []]
         self.end_round = False
+
+        self.dora = []
+        self.dora.append(GetDora(convertTile(init.attrib["seed"].split(',')[5])))
+        self.scores = init.attrib["ten"].split(',')
     
     def DoraRevealed(self, hai, element):
-        pass
+        self.dora.append(GetDora(convertTile(int(hai))))
 
     def TileDiscarded(self, who, tile, tsumogiri, element):
         self.hands[who][tile] -= 1
