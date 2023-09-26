@@ -15,13 +15,14 @@ def calculateMinimumShanten(handToCheck, mininumShanten = -1):
         return calculateStandardShantenBacktrack(handToCheck, mininumShanten)
     
     chiitoiShanten = calculateChiitoitsuShanten(handToCheck)
-    if chiitoiShanten == -1:
-        return -1
+    if chiitoiShanten == -1: return -1
     
     standardShanten = calculateStandardShantenBacktrack(handToCheck, mininumShanten)
     return min(standardShanten, chiitoiShanten)
 
 def calculateUkeire(hand, calls = [], baseShanten = -2):
+    if sum(hand.values()) % 3 != 1: #Must be 1, 4, 7, 10 or 13
+        raise Exception("Ukeire can only be calculated for hands after discard")
     if baseShanten == -2:
         baseShanten = calculateMinimumShanten(hand)
     
@@ -505,3 +506,4 @@ def calculateKokushiShanten(handToCheck):
                     hasPair = 1
                
     return 13 - uniqueTiles - hasPair
+

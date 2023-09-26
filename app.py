@@ -8,8 +8,8 @@ import util.shanten as s
 import traceback
 
 # Change this to the analyzer being used
-from analyzers.wait_distribution import WaitDistribution
-analyzer = WaitDistribution()
+from analyzers.shanten_width_winrate import ShantenWidthWinrate
+analyzer = ShantenWidthWinrate()
 
 allowed_types = ["169", "225", "185"] # Not sure what these are but I will leave it
 log_database = r'C:\Users\leecs1\Downloads\es4p.db'
@@ -22,18 +22,20 @@ with sqlite3.connect(log_database) as conn:
     cursor.execute(f'SELECT COUNT(*) FROM logs')
 
     # Max: 893440
-    rowcount = 100
+    rowcount = 1
     cursor.execute(f'SELECT * FROM logs LIMIT {rowcount}')
     # cursor.fetchmany(157)
 
-    for i in tqdm(range(rowcount), ncols=120, disable=False):
+    for i in tqdm(range(rowcount), ncols=120, disable=True):
         log = cursor.fetchone()
-
         if log is None:
             break
-
         content = decompress(log[2])
         logxml = XML(content, etree.XMLParser(recover=True))
+
+        # with open('data/examplelog.xml', 'wb') as f:
+        #     str = etree.tostring(logxml, pretty_print=True)
+        #     f.write(str)
 
         game_type = logxml.find("GO").attrib["type"]
         if game_type in allowed_types:
