@@ -22,11 +22,11 @@ with sqlite3.connect(log_database) as conn:
     cursor.execute(f'SELECT COUNT(*) FROM logs')
 
     # Max: 893440
-    rowcount = 1
+    rowcount = 3000
     cursor.execute(f'SELECT * FROM logs LIMIT {rowcount}')
     # cursor.fetchmany(157)
 
-    for i in tqdm(range(rowcount), ncols=120, disable=True):
+    for i in tqdm(range(rowcount), ncols=120, disable=False):
         log = cursor.fetchone()
         if log is None:
             break
@@ -45,4 +45,4 @@ with sqlite3.connect(log_database) as conn:
                 print(traceback.format_exc())
                 print(f"Error in log {i}: {error}")
 
-    #analyzer.PrintResults()
+    analyzer.PrintResults()

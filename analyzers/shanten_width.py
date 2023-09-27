@@ -46,9 +46,9 @@ class ShantenWidth(LogHandAnalyzer):
                 if num_calls == 0:
                     self.nocall_df.loc[(self.nocall_df["Shanten"] == shanten) & (self.nocall_df["Width"] == width),turn] += 1
                 if num_calls == 1:
-                    self.onecall_df.loc[(self.nocall_df["Shanten"] == shanten) & (self.nocall_df["Width"] == width),turn] += 1
+                    self.onecall_df.loc[(self.onecall_df["Shanten"] == shanten) & (self.onecall_df["Width"] == width),turn] += 1
                 if num_calls >= 2:
-                    self.twocall_df.loc[(self.nocall_df["Shanten"] == shanten) & (self.nocall_df["Width"] == width),turn] += 1
+                    self.twocall_df.loc[(self.twocall_df["Shanten"] == shanten) & (self.twocall_df["Width"] == width),turn] += 1
                 
             if turn == turns_considered[-1]:
                 self.end_round = True
