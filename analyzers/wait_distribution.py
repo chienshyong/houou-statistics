@@ -16,7 +16,8 @@ class WaitDistribution(LogHandAnalyzer):
     def __init__(self):
         super().__init__()
 
-        self.riichi_counts = 0      
+        self.riichi_counts = 0 
+        self.riichi_width_count = 0     
         self.open_counts = 0  
         self.complex_waits = 0
         self.complex_waits_open = 0
@@ -47,18 +48,14 @@ class WaitDistribution(LogHandAnalyzer):
                 self.recorded[who] = True
         
     def PrintResults(self):
-        # print(self.riichiwait_df)
-        # print(self.riichishanpon_df)
-        # print(self.openwait_df)
-        # print(self.openshanpon_df)
-        # print("Total riichis: " + str(self.riichi_counts))
-        # print("Total opens: " + str(self.open_counts))
         self.riichiwait_df.to_csv(output, mode='a')
         self.riichishanpon_df.to_csv(output, mode='a')
         self.openwait_df.to_csv(output, mode='a')
         self.openshanpon_df.to_csv(output, mode='a')
         with open(output, "a", encoding="utf8") as f:
             f.write(f"Total riichi,{str(self.riichi_counts)}")
+            f.write("\n")
+            f.write(f"Riichi width avg,{str(self.riichi_width_count/self.riichi_counts)}")
             f.write("\n")
             f.write(f"Complex waits,{str(self.complex_waits)}")
             f.write("\n")
@@ -68,6 +65,7 @@ class WaitDistribution(LogHandAnalyzer):
     
     def record(self, uke, wait, hand):
         self.riichi_counts += 1
+        self.riichi_width_count += uke
         if len(wait) == 3:
             if all(i//10 == wait[0]//10 for i in wait) and wait[0] + 3 == wait[1] and wait[1] + 3 == wait[2]:
                     self.riichiwait_df.loc[wait[0]%10,"sanmenchan"] += 1

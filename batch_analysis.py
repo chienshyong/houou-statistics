@@ -6,49 +6,43 @@ import bz2
 import sqlite3
 from lxml import etree
 from tqdm import tqdm
-import cProfile
+import traceback
 
-from analyzers.mentanpin import Mentanpin
+from analyzers.sotogawa import Sotogawa
+from analyzers.first_simple_tile import FirstSimpleTile
 
-analyzers = [Mentanpin()]
+analyzers = [Sotogawa(), FirstSimpleTile()]
 allowed_types = ["169", "225", "185"]
 log_database = r'C:\Users\leecs1\Downloads\es4p.db'
 
-def RunAnalysis():
-    decompress = bz2.decompress
-    XML = etree.XML
 
-    with sqlite3.connect(log_database) as conn:
-        cursor = conn.cursor()
-        cursor.execute('SELECT COUNT(*) FROM logs')
-        rowcount = cursor.fetchone()[0]
-        rowcount = 1000
-        cursor.execute(f'SELECT * FROM logs LIMIT {rowcount}')
-        last_print = 0
+decompress = bz2.decompress
+XML = etree.XML
 
-        for i in tqdm(range(rowcount), ncols=80):
-            log = cursor.fetchone()
-            if log is None:
-                break
+with sqlite3.connect(log_database) as conn:
+    cursor = conn.cursor()
 
-            content = decompress(log[2])
-            xml = XML(content, etree.XMLParser(recover=True))
-            game_type = xml.find("GO").attrib["type"]
+    # Max: 893440
+    rowcount = 50000
+    cursor.execute(f'SELECT * FROM logs LIMIT {rowcount}')
 
-            if game_type in allowed_types:
-                for analyzer in analyzers:
-                    analyzer.ParseLog(xml, log[0])
-            
-            if i - last_print > 100000:
-                last_print = i
-                for analyzer in analyzers:
-                    print("==========")
-                    analyzer.PrintResults()
+    for i in tqdm(range(rowcount), ncols=80):
+        log = cursor.fetchone()
+        if log is None:
+            break
+
+        content = decompress(log[2])
+        logxml = XML(content, etree.XMLParser(recover=True))
+
+        game_type = logxml.find("GO").attrib["type"]
+        if game_type in allowed_types:
+            for analyzer in analyzers:
+                try:
+                    analyzer.ParseLog(logxml, log[0])
+                except Exception as error:
+                    print(traceback.format_exc())
+                    print(f"Error in log {i}: {error}")
 
     for analyzer in analyzers:
         print("==========")
         analyzer.PrintResults()
-    
-    return True
-
-RunAnalysis()

@@ -20,6 +20,9 @@ def calculateMinimumShanten(handToCheck, mininumShanten = -1):
     standardShanten = calculateStandardShantenBacktrack(handToCheck, mininumShanten)
     return min(standardShanten, chiitoiShanten)
 
+def isTenpai(hand):
+    return calculateMinimumShanten(hand, mininumShanten = 0) == 0
+
 def calculateUkeire(hand, calls = [], baseShanten = -2):
     if sum(hand.values()) % 3 != 1: #Must be 1, 4, 7, 10 or 13
         raise Exception("Ukeire can only be calculated for hands after discard")
@@ -67,8 +70,8 @@ def calculateUkeire(hand, calls = [], baseShanten = -2):
 
     return value, tiles
 
-def isTenpai(hand):
-    return calculateMinimumShanten(hand, mininumShanten = 0) == 0
+def calculateWait(hand, calls = []):
+    return calculateUkeire(hand, calls, baseShanten=0)
 
 # Original algorithm from Euophrys
 def calculateStandardShanten(handToCheck, mininumShanten_ = -1):

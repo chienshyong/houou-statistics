@@ -2,14 +2,11 @@ import bz2
 import sqlite3
 from lxml import etree
 from tqdm import tqdm
-from collections import Counter
-import util.analysis_utils as u
-import util.shanten as s
 import traceback
 
 # Change this to the analyzer being used
-from analyzers.shanten_width_winrate import ShantenWidthWinrate
-analyzer = ShantenWidthWinrate()
+from analyzers.sotogawa import Sotogawa
+analyzer = Sotogawa()
 
 allowed_types = ["169", "225", "185"] # Not sure what these are but I will leave it
 log_database = r'C:\Users\leecs1\Downloads\es4p.db'
@@ -19,10 +16,9 @@ XML = etree.XML
 
 with sqlite3.connect(log_database) as conn:
     cursor = conn.cursor()
-    cursor.execute(f'SELECT COUNT(*) FROM logs')
 
     # Max: 893440
-    rowcount = 3000
+    rowcount = 30
     cursor.execute(f'SELECT * FROM logs LIMIT {rowcount}')
     # cursor.fetchmany(157)
 
