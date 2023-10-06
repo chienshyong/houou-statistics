@@ -8,7 +8,7 @@ import pandas as pd
 # Gathers the danger level of the ura and matagi suji of the first (and maybe 2nd and 3rd) simple tile discarded.
 # Only for riichi hands. When someone riichi, check their first 3 simple tile discards and check their final wait.
 
-output = "./results/FirstSimpleTile.csv"
+output = "./results/SotogawaFirstSimple.csv"
 simples = [2,3,4,5,6,7,8,12,13,14,15,16,17,18,22,23,24,25,26,27,28]
 
 class FirstSimpleTile(LogHandAnalyzer):

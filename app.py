@@ -5,8 +5,8 @@ from tqdm import tqdm
 import traceback
 
 # Change this to the analyzer being used
-from analyzers.sotogawa import Sotogawa
-analyzer = Sotogawa()
+from analyzers.discard_correlation import DiscardCorrelation
+analyzer = DiscardCorrelation()
 
 allowed_types = ["169", "225", "185"] # Not sure what these are but I will leave it
 log_database = r'C:\Users\leecs1\Downloads\es4p.db'
@@ -18,7 +18,7 @@ with sqlite3.connect(log_database) as conn:
     cursor = conn.cursor()
 
     # Max: 893440
-    rowcount = 30
+    rowcount = 25000
     cursor.execute(f'SELECT * FROM logs LIMIT {rowcount}')
     # cursor.fetchmany(157)
 

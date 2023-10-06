@@ -9,7 +9,7 @@ from tqdm import tqdm
 import traceback
 
 from analyzers.sotogawa import Sotogawa
-from analyzers.first_simple_tile import FirstSimpleTile
+from analyzers.sotogawa_first_simple import FirstSimpleTile
 
 analyzers = [Sotogawa(), FirstSimpleTile()]
 allowed_types = ["169", "225", "185"]
