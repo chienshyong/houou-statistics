@@ -42,6 +42,15 @@ yaku_names = ["Tsumo", "Riichi", "Ippatsu", "Chankan", "Rinshan", "Haitei", "Hou
 def convertTile(tile):
     return tenhou_tile_to_array_index_lookup[int(tile)]
 
+def convertTileCheckAka(tile):
+    if tile == '16':
+        return tenhou_tile_to_array_index_lookup[int(tile)], 0
+    if tile == '52':
+        return tenhou_tile_to_array_index_lookup[int(tile)], 1
+    if tile == '88':
+        return tenhou_tile_to_array_index_lookup[int(tile)], 2
+    return tenhou_tile_to_array_index_lookup[int(tile)], None
+
 def convertHand(hand):
     return Counter(hand)
 
@@ -244,9 +253,17 @@ def CheckDoubleRon(element):
 
 def GetStartingHands(init, players = 4):
     hands = []
+    aka = [-1, -1, -1]
     for i in range(players):
-        hands.append(convertHai(init.attrib["hai%d" % i]))
-    return hands
+        tiles = init.attrib["hai%d" % i].split(',')
+        hands.append(convertHand(list(map(convertTile,tiles))))
+        if '16' in tiles:
+            aka[0] = i
+        if '52' in tiles:
+            aka[1] = i
+        if '88' in tiles:
+            aka[2] = i
+    return hands, aka
 
 dora_indication = [
      6, 2, 3, 4, 5, 6, 7, 8, 9, 1,
@@ -257,6 +274,27 @@ dora_indication = [
 
 def GetDora(indicator):
     return dora_indication[indicator]
+
+# Categorize hand based on shanten and uke. Very good, good and bad shape.
+def GroupShanten(shanten,uke):
+    if shanten >= 4: return "4"
+    if shanten == 3:
+        if uke >= 52: res = "3.52"
+        elif uke >= 32: res = "3.32"
+        else: res = "3.0"
+    if shanten == 2:
+        if uke >= 40: res = "2.40"
+        elif uke >= 24: res = "2.24"
+        else: res = "2.0"
+    if shanten == 1:
+        if uke >= 24: res = "1.24"
+        elif uke >= 16: res = "1.16"
+        else: res = "1.0"
+    if shanten == 0:
+        if uke >= 9: res = "0.9"
+        elif uke >= 5: res = "0.5"
+        else: res = "0.0"
+    return res
 
 # Convert amber notation hand + calls or list into readable form.
 def parseAmberNotation(hand = None, calls = [], list = None):

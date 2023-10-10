@@ -23,11 +23,14 @@ def calculateMinimumShanten(handToCheck, mininumShanten = -1):
 def isTenpai(hand):
     return calculateMinimumShanten(hand, mininumShanten = 0) == 0
 
-def calculateUkeire(hand, calls = [], baseShanten = -2):
+def calculateUkeire(hand, calls = [], baseShanten = -2, standard_only = False):
     if sum(hand.values()) % 3 != 1: #Must be 1, 4, 7, 10 or 13
         raise Exception("Ukeire can only be calculated for hands after discard")
     if baseShanten == -2:
-        baseShanten = calculateMinimumShanten(hand)
+        if standard_only:
+            baseShanten = calculateStandardShantenBacktrack(hand)
+        else:
+            baseShanten = calculateMinimumShanten(hand)
     
     value = 0
     tiles = []
@@ -59,7 +62,11 @@ def calculateUkeire(hand, calls = [], baseShanten = -2):
 
     for addedTile in potentialTiles:
         hand[addedTile] += 1
-        if calculateMinimumShanten(hand, mininumShanten = baseShanten - 1) < baseShanten:
+        if standard_only:
+            newShanten = calculateStandardShantenBacktrack(hand, mininumShanten_ = baseShanten - 1)
+        else:
+            newShanten = calculateMinimumShanten(hand, mininumShanten = baseShanten - 1)
+        if newShanten < baseShanten:
             #Improves shanten. Add the number of remaining tiles to the ukeire count
             value += 5 - hand[addedTile] - flatcalls.count(addedTile)
             tiles.append(addedTile)

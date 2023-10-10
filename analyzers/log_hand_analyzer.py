@@ -1,5 +1,5 @@
 from .log_analyzer import LogAnalyzer
-from util.analysis_utils import convertHai, convertTile, discards, draws, GetNextRealTag, GetStartingHands, getTilesFromCall, GetDora
+from util.analysis_utils import convertHai, convertTile, convertTileCheckAka, discards, draws, GetNextRealTag, GetStartingHands, getTilesFromCall, GetDora
 from abc import abstractmethod
 
 # Analyzer template that takes care of all the annoying work of gathering hands, discards, and calls. 
@@ -9,6 +9,7 @@ class LogHandAnalyzer(LogAnalyzer):
     def __init__(self):
         self.current_log_id = ""
         self.hands = [[], [], [], []] # Stores the hands, calls, discards for one hand only, from 0th to 3rd player.
+        self.aka = [-1, -1, -1] # Who has drawn the akadora (5, 15, 25). If they have it in winning hand just assume it's aka.
         self.calls = [[], [], [], []]
         self.discards = [[], [], [], []] # Define turn as len(self.discards[(self.oya-1)%4])
         self.last_draw = [50,50,50,50]
@@ -44,7 +45,9 @@ class LogHandAnalyzer(LogAnalyzer):
                 
             elif element.tag[0] in draws:
                 who = ord(element.tag[0]) - 84
-                tile = convertTile(element.tag[1:])
+                tile, aka = convertTileCheckAka(element.tag[1:])
+                if aka != None:
+                    self.aka[aka] = who
                 self.last_draw[who] = tile
                 self.TileDrawn(who, tile, element)
 
@@ -71,7 +74,7 @@ class LogHandAnalyzer(LogAnalyzer):
         self.RoundEnded(round_)
     
     def RoundStarted(self, init):
-        self.hands = GetStartingHands(init) 
+        self.hands, self.aka = GetStartingHands(init) 
         self.calls = [[], [], [], []]
         self.discards = [[], [], [], []]
         self.end_round = False
