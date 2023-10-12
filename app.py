@@ -29,9 +29,9 @@ with sqlite3.connect(log_database) as conn:
         content = decompress(log[2])
         logxml = XML(content, etree.XMLParser(recover=True))
 
-        # with open('data/examplelog.xml', 'wb') as f:
-        #     str = etree.tostring(logxml, pretty_print=True)
-        #     f.write(str)
+        with open('data/examplelog3.xml', 'wb') as f:
+            str = etree.tostring(logxml, pretty_print=True)
+            f.write(str)
 
         game_type = logxml.find("GO").attrib["type"]
         if game_type in allowed_types:

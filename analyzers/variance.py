@@ -9,6 +9,7 @@ import numpy as np
 import statistics
 
 # Finding the mean and std dev score change by position and round.
+# Finding the mean and std dev score change of the final score by position and round
 
 output = "./results/Variance.csv"
 
@@ -19,7 +20,19 @@ class Variance(LogHandAnalyzer):
     def __init__(self):
         super().__init__()
         self.round_position_score_df = [[[] for _ in range(len(positions))] for _ in range(len(rounds))]
-        self.dealer_round_position_score_df = [[[] for _ in range(len(positions))] for _ in range(len(rounds))]
+        #self.dealer_round_position_score_df = [[[] for _ in range(len(positions))] for _ in range(len(rounds))]
+        self.final_scores = []
+
+    def ParseLog(self, log, log_id):
+        for round_ in log.iter("AGARI"):
+            if "owari" in round_.attrib:
+                s = round_.attrib["owari"].split(',')
+                self.final_scores = [int(s[0]),int(s[2]),int(s[4]),int(s[6])]
+        for round_ in log.iter("RYUUKYOKU"):
+            if "owari" in round_.attrib:
+                s = round_.attrib["owari"].split(',')
+                self.final_scores = [int(s[0]),int(s[2]),int(s[4]),int(s[6])]
+        return super().ParseLog(log, log_id)
     
     def PlayRound(self, round_):
         self.RoundStarted(round_)
@@ -53,41 +66,47 @@ class Variance(LogHandAnalyzer):
                 else:
                     current_positions[i].append("Behind <4000")
 
-        for element in round_.itersiblings():
-            if element.tag == "AGARI":
-                sc = element.attrib["sc"].split(',')
-                newscores = [int(sc[0]),int(sc[2]),int(sc[4]),int(sc[6])] #After riichi bets
-                change = [int(sc[1]),int(sc[3]),int(sc[5]),int(sc[7])]
-                delta = [x - y + z for x,y,z in zip(newscores, self.scores, change)]
-                for i in range(4):
-                    if self.oya == i:
-                        for p in current_positions[i]:
-                            self.dealer_round_position_score_df[self.round[0]][positions.index(p)].append(delta[i])
-                            self.dealer_round_position_score_df[self.round[0]][-1].append(delta[i])
-                    else:
-                        for p in current_positions[i]:
-                            self.round_position_score_df[self.round[0]][positions.index(p)].append(delta[i])
-                            self.round_position_score_df[self.round[0]][-1].append(delta[i])
-                break
+        projection = [x - y for x,y in zip(self.final_scores, self.scores)]
+        for i in range(4):
+            for p in current_positions[i]:
+                self.round_position_score_df[self.round[0]][positions.index(p)].append(projection[i])
+            self.round_position_score_df[self.round[0]][-1].append(projection[i])
+
+        # for element in round_.itersiblings():
+        #     if element.tag == "AGARI":
+        #         sc = element.attrib["sc"].split(',')
+        #         newscores = [int(sc[0]),int(sc[2]),int(sc[4]),int(sc[6])] 
+        #         change = [int(sc[1]),int(sc[3]),int(sc[5]),int(sc[7])]
+        #         delta = [x - y + z for x,y,z in zip(newscores, self.scores, change)]
+        #         for i in range(4):
+        #             if self.oya == i:
+        #                 for p in current_positions[i]:
+        #                     self.dealer_round_position_score_df[self.round[0]][positions.index(p)].append(delta[i])
+        #                     self.dealer_round_position_score_df[self.round[0]][-1].append(delta[i])
+        #             else:
+        #                 for p in current_positions[i]:
+        #                     self.round_position_score_df[self.round[0]][positions.index(p)].append(delta[i])
+        #                     self.round_position_score_df[self.round[0]][-1].append(delta[i])
+        #         break
             
-            elif element.tag == "RYUUKYOKU":
-                if "type" in element.attrib:
-                    self.AbortiveDraw(element)
-                else:
-                    sc = element.attrib["sc"].split(',')
-                    newscores = [int(sc[0]),int(sc[2]),int(sc[4]),int(sc[6])]
-                    change = [int(sc[1]),int(sc[3]),int(sc[5]),int(sc[7])]
-                    delta = [x - y + z for x,y,z in zip(newscores, self.scores, change)]
-                    for i in range(4):
-                        if self.oya == i:
-                            for p in current_positions[i]:
-                                self.dealer_round_position_score_df[self.round[0]][positions.index(p)].append(delta[i])
-                                self.dealer_round_position_score_df[self.round[0]][-1].append(delta[i])
-                        else:
-                            for p in current_positions[i]:
-                                self.round_position_score_df[self.round[0]][positions.index(p)].append(delta[i])
-                                self.round_position_score_df[self.round[0]][-1].append(delta[i])
-                break    
+        #     elif element.tag == "RYUUKYOKU":
+        #         if "type" in element.attrib:
+        #             self.AbortiveDraw(element)
+        #         else:
+        #             sc = element.attrib["sc"].split(',')
+        #             newscores = [int(sc[0]),int(sc[2]),int(sc[4]),int(sc[6])]
+        #             change = [int(sc[1]),int(sc[3]),int(sc[5]),int(sc[7])]
+        #             delta = [x - y + z for x,y,z in zip(newscores, self.scores, change)]
+        #             for i in range(4):
+        #                 if self.oya == i:
+        #                     for p in current_positions[i]:
+        #                         self.dealer_round_position_score_df[self.round[0]][positions.index(p)].append(delta[i])
+        #                         self.dealer_round_position_score_df[self.round[0]][-1].append(delta[i])
+        #                 else:
+        #                     for p in current_positions[i]:
+        #                         self.round_position_score_df[self.round[0]][positions.index(p)].append(delta[i])
+        #                         self.round_position_score_df[self.round[0]][-1].append(delta[i])
+        #         break    
 
     def PrintResults(self):
         with open(output, "w", encoding="utf8") as f:
@@ -98,10 +117,10 @@ class Variance(LogHandAnalyzer):
                         f.write(f"{round},{position},")
                         f.write(f"{statistics.mean(self.round_position_score_df[r][p])},")
                         f.write(f"{statistics.stdev(self.round_position_score_df[r][p])}\n")
-            f.write("\nDealer\n")
-            for r, round in enumerate(rounds):
-                for p, position in enumerate(positions):
-                    if len(self.dealer_round_position_score_df[r][p]) > 2:
-                        f.write(f"{round},{position},")
-                        f.write(f"{statistics.mean(self.dealer_round_position_score_df[r][p])},")
-                        f.write(f"{statistics.stdev(self.dealer_round_position_score_df[r][p])}\n")
+            # f.write("\nDealer\n")
+            # for r, round in enumerate(rounds):
+            #     for p, position in enumerate(positions):
+            #         if len(self.dealer_round_position_score_df[r][p]) > 2:
+            #             f.write(f"{round},{position},")
+            #             f.write(f"{statistics.mean(self.dealer_round_position_score_df[r][p])},")
+            #             f.write(f"{statistics.stdev(self.dealer_round_position_score_df[r][p])}\n")
