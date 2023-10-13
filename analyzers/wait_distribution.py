@@ -48,7 +48,7 @@ class WaitDistribution(LogHandAnalyzer):
                 self.recorded[who] = True
         
     def PrintResults(self):
-        self.riichiwait_df.to_csv(output, mode='a')
+        self.riichiwait_df.to_csv(output, mode='w')
         self.riichishanpon_df.to_csv(output, mode='a')
         self.openwait_df.to_csv(output, mode='a')
         self.openshanpon_df.to_csv(output, mode='a')
@@ -99,13 +99,15 @@ class WaitDistribution(LogHandAnalyzer):
         if len(wait) == 2:
             if all(i//10 == wait[0]//10 for i in wait) and wait[0] + 3 == wait[1] and uke >= 5:
                 self.riichiwait_df.loc[wait[0]%10,"ryanmen"] += 1
-            else:
+            elif uke <= 4:
                 w0 = "honor" if wait[0] > 30 else wait[0]%10
                 w1 = "honor" if wait[1] > 30 else wait[1]%10
                 if w0 != "honor" and w1 != "honor":
                     if w0 > w1:
                         w0, w1 = w1, w0
                 self.riichishanpon_df.loc[w0,w1] += 1
+            else:
+                self.complex_waits += 1
 
     def record_open(self, uke, wait, hand):
         self.open_counts += 1
@@ -141,10 +143,12 @@ class WaitDistribution(LogHandAnalyzer):
         if len(wait) == 2:
             if all(i//10 == wait[0]//10 for i in wait) and wait[0] + 3 == wait[1] and uke >= 5:
                 self.openwait_df.loc[wait[0]%10,"ryanmen"] += 1
-            else:
+            elif uke <= 4:
                 w0 = "honor" if wait[0] > 30 else wait[0]%10
                 w1 = "honor" if wait[1] > 30 else wait[1]%10
                 if w0 != "honor" and w1 != "honor":
                     if w0 > w1:
                         w0, w1 = w1, w0
                 self.openshanpon_df.loc[w0,w1] += 1
+            else:
+                self.complex_waits_open += 1

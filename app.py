@@ -5,8 +5,8 @@ from tqdm import tqdm
 import traceback
 
 # Change this to the analyzer being used
-from analyzers.variance import Variance
-analyzer = Variance()
+from analyzers.riichi_tile import RiichiTile
+analyzer = RiichiTile()
 
 allowed_types = ["169", "225", "185"] # Not sure what these are but I will leave it
 log_database = r'C:\Users\leecs1\Downloads\es4p.db'
@@ -18,9 +18,9 @@ with sqlite3.connect(log_database) as conn:
     cursor = conn.cursor()
 
     # Max: 893440
-    rowcount = 300000
+    rowcount = 40000
     cursor.execute(f'SELECT * FROM logs LIMIT {rowcount}')
-    # cursor.fetchmany(157)
+    #cursor.fetchmany(200)
 
     for i in tqdm(range(rowcount), ncols=120, disable=False):
         log = cursor.fetchone()
@@ -29,9 +29,9 @@ with sqlite3.connect(log_database) as conn:
         content = decompress(log[2])
         logxml = XML(content, etree.XMLParser(recover=True))
 
-        with open('data/examplelog3.xml', 'wb') as f:
-            str = etree.tostring(logxml, pretty_print=True)
-            f.write(str)
+        # with open('data/examplelog3.xml', 'wb') as f:
+        #     str = etree.tostring(logxml, pretty_print=True)
+        #     f.write(str)
 
         game_type = logxml.find("GO").attrib["type"]
         if game_type in allowed_types:
@@ -41,4 +41,4 @@ with sqlite3.connect(log_database) as conn:
                 print(traceback.format_exc())
                 print(f"Error in log {i}: {error}")
 
-    analyzer.PrintResults()
+    # analyzer.PrintResults()

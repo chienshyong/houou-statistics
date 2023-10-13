@@ -12,6 +12,7 @@ class LogHandAnalyzer(LogAnalyzer):
         self.aka = [-1, -1, -1] # Who has drawn the akadora (5, 15, 25). If they have it in winning hand just assume it's aka.
         self.calls = [[], [], [], []]
         self.discards = [[], [], [], []] # Define turn as len(self.discards[(self.oya-1)%4])
+        self.turn = 0
         self.last_draw = [50,50,50,50]
         self.end_round = False # Can set this manually to go next log
 
@@ -86,11 +87,14 @@ class LogHandAnalyzer(LogAnalyzer):
         self.scores = init.attrib["ten"].split(',')
         self.scores = [int(i) for i in self.scores]
         self.oya = int(init.attrib["oya"])
+        self.turn = 0
     
     def DoraRevealed(self, hai, element):
         self.dora.append(GetDora(convertTile(int(hai))))
 
     def TileDiscarded(self, who, tile, tsumogiri, element):
+        if who == self.oya:
+            self.turn = len(self.discards[(self.oya-1)%4])
         self.hands[who][tile] -= 1
         self.discards[who].append(tile)
 

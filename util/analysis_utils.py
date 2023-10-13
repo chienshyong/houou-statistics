@@ -343,6 +343,6 @@ def parseAmberNotation(hand = None, calls = [], list = None):
                 res += honor_map[item%10 - 1] + ','
         res = res[:-1] + "]"
 
-    return res
+    return res.strip()
 
 # print(parseAmberNotation(list = [33,33,33,23,25]))
