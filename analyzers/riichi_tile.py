@@ -6,20 +6,17 @@ from lxml import etree
 import pandas as pd
 
 # Discard reading from the Riichi tile, for first riichi
-# Turn?
-# Tedashi or tsumogiri?
+# Turn? Tedashi or tsumogiri?
 # Safe tile, terminal, 28, middle tile or dora? What about safe tile after dropping a joint?
-
-# Distribution of hand shapes when getting into tenpai - perfect (17-24 uke), ryanmen ryanmen (13-16 uke), sticky
-# Final wait good shape or bad shape
-# Final wait matagi or ura suji
-# Number of dora
-# Tanyao %
+# What if the tile is connected to something in the discards?
 
 output = "./results/RiichiTile.csv"
 joints = [(1,1), (2,2), (3,3), (4,4), (5,5),                            # Pair Drop 
         (1,2), (2,1), (2,4), (4,2), (1,3), (3,1), (3,5), (5,3),         # Kanchan Drop
         (2,3), (3,2), (3,4), (4,3), (4,5), (5,4)]                       # Ryanmen Drop
+combos = [(1,7), (7,1), (2,8), (1,9),                                   # 6 gap and 7 gap for good measure
+        (1,6), (6,1), (2,7), (7,2),                                     # Aida yon ken
+        (1,4), (4,1), (2,5), (5,2), (3,6), (6,3)]                       # Suji drop
 
 class RiichiTile(LogHandAnalyzer):
     def __init__(self):
@@ -27,32 +24,18 @@ class RiichiTile(LogHandAnalyzer):
         self.hand_before = None
         self.tedashi = [[], [], [], []]
 
-        # self.riichi_counts = 0
-        # self.riichi_tanyao = 0
-        # self.riichi_dorawait = 0
-        # self.riichi_turn = 0
-        # self.tsumogiri_counts = 0
-        # self.tsumogiri_tanyao = 0
-        # self.tsumogiri_dorawait = 0
-        # self.tsumogiri_turn = 0
-        # self.tsumogiri_df = pd.DataFrame(0,index = ["tanki", "sanshoku", "sanankou", "tanyao", "iipeikou", "yakuhai triplet", "yakuhai pair", "pinfu", "no yaku"],
-        #                                  columns = ["sanmenchan", "ryanmen", "kanchan", "tanki", "shanpon", "complex", "tanyao", "dorasoba"])
-        # self.tsumogiri_dora = 0
-        # self.tsumogiri_2dora = 0
-        # self.tsumogiri_totalwidth = 0
+        self.riichitile_correlation_df = pd.DataFrame(0,index=[1,2,3,4,5,6,7,8,9],columns=[1,2,3,4,5,6,7,8,9,11,12,13,14,15,16,17,18,19,"count"]) #Given riichi on X, chance Y is in the discards
+        self.riichitile_df = pd.DataFrame(0, index = [1,2,3,4,5,6,7,8,9], columns=[1,2,3,4,5,6,7,8,9,11,12,13,14,15,16,17,18,19,"Honor","count"]) #Given riichi on X, relative danger of Y
+        self.riichitile_jointdrop_df = pd.DataFrame(0,index = joints,
+                                columns = [1,2,3,4,5,6,7,8,9,11,12,13,14,15,16,17,18,19,"Honor","count"]) #Given riichi on X2 and X1 in discards, relative danger of tiles
+        self.riichitile_combos_df = pd.DataFrame(0,index = combos,
+                                columns = [1,2,3,4,5,6,7,8,9,11,12,13,14,15,16,17,18,19,"Honor","count"]) #Given riichi on X2 and X1 in discards, relative danger of tiles
+        self.riichitile_urawait_df = pd.DataFrame(0, index = [1,2,3,4,5,6,7,8,9], columns=["matagisuji", "urasuji","urakanchan","uratanki","urashanpon","uracomplex", "not ura", "count"]) #Chance of type of wait around riichi tile, given riichi tile
+        self.turn_urawait_df = pd.DataFrame(0, index = range(0,18), columns=["matagisuji", "urasuji","urakanchan", "uratanki","urashanpon","uracomplex", "not ura", "count"]) #Chance of type of wait around riichi tile, given turn
+        self.riichitile_firstrow_df = pd.DataFrame(0, index = [1,2,3,4,5,6,7,8,9], columns=[1,2,3,4,5,6,7,8,9,11,12,13,14,15,16,17,18,19,"Honor","count"]) #Given riichi on X, relative danger of Y
+        self.riichitile_secondrow_df = pd.DataFrame(0, index = [1,2,3,4,5,6,7,8,9], columns=[1,2,3,4,5,6,7,8,9,11,12,13,14,15,16,17,18,19,"Honor","count"]) #Given riichi on X, relative danger of Y
+        self.riichitile_thirdrow_df = pd.DataFrame(0, index = [1,2,3,4,5,6,7,8,9], columns=[1,2,3,4,5,6,7,8,9,11,12,13,14,15,16,17,18,19,"Honor","count"]) #Given riichi on X, relative danger of Y
 
-        # self.riichitile_df = pd.DataFrame(0,index = ["Aka", "Dora", "Honor", "19", "28", "34567"],
-        #                             columns = ["sanmenchan", "ryanmen", "kanchan", "shanpon", "tanki", "complex", "tanyao", "dorawait", "dora",  "2dora", "totalwidth", "count"])
-
-        # self.safetile_jointdrop_df = pd.DataFrame(0,index = joints,
-        #                             columns = ["sanmenchan", "ryanmen", "kanchan", "shanpon", "tanki", "complex", "tanyao", "dorawait", "dora",  "2dora", "totalwidth", "count"])
-        
-        # self.jointdrop_df = pd.DataFrame(0,index = joints,
-        #                             columns = ["sanmenchan", "ryanmen", "kanchan", "shanpon", "tanki", "complex", "tanyao", "dorawait", "dora",  "2dora", "totalwidth", "count"])
-        
-        # self.riichijoint_df = pd.DataFrame(0,index = joints,
-        #                             columns = ["sanmenchan", "ryanmen", "kanchan", "shanpon", "tanki", "complex", "tanyao", "dorawait", "dora",  "2dora", "totalwidth", "count"])
-        
     def RoundStarted(self, init):
         self.tedashi = [[], [], [], []]
         return super().RoundStarted(init)
@@ -67,6 +50,10 @@ class RiichiTile(LogHandAnalyzer):
             self.hand_before[self.last_draw[who]] -= 1
 
         if step == 2:
+            if self.turn > 17:
+                self.end_round = True
+                return
+            
             ### Discard pool
             discarded_joints = []
             for i in range(len(self.discards[who])):
@@ -125,10 +112,10 @@ class RiichiTile(LogHandAnalyzer):
             ### Riichi tile
             riichi_tile = self.discards[who][-1]
             riichi_tile_class = RiichiTileClass(riichi_tile, self.dora, aka_discarded)
-
+            ura_wait_class = UraWaitSorter(riichi_tile, wait, wait_class)
             tsumogiri = self.discards[who][-1] == self.last_draw[who]
 
-            # First joint that is +- 2 of riichi tile 
+            First joint that is +- 2 of riichi tile 
             riichi_joint = []
             if riichi_tile < 30 and riichi_tile % 10 <= 5:
                 for i in range(len(self.discards[who])-1,-1,-1):
@@ -141,107 +128,78 @@ class RiichiTile(LogHandAnalyzer):
                                     riichi_joint.append(j)
                                     break
 
+            riichi_combos = []
+            if riichi_tile < 30:
+                for i in range(len(self.discards[who])-1):
+                    d = self.discards[who][i]
+                    if d > 30: continue
+                    for c in combos:
+                        if c[0] == d % 10:
+                            if c[1] == riichi_tile % 10 and d // 10 == riichi_tile // 10 and not tsumogiri: # Joint found.
+                                riichi_combos.append(c)
+
             ### Record data
+            if riichi_tile < 30 and self.turn <= 6:
+                self.riichitile_firstrow_df.loc[riichi_tile%10, "count"] += 1
+                for w in wait:
+                    if w > 30:
+                        waittile_class = "Honor"
+                    elif riichi_tile // 10 == w // 10:
+                        waittile_class = w % 10
+                    else:
+                        waittile_class = w % 10 + 10 
+                    self.riichitile_firstrow_df.loc[riichi_tile%10, waittile_class] += 1
 
-            # self.riichitile_df.loc[riichi_tile_class, "count"] += 1
-            # self.riichitile_df.loc[riichi_tile_class, wait_class] += 1
-            # if tanyao:
-            #     self.riichitile_df.loc[riichi_tile_class, "tanyao"] += 1
-            # if dsoba_wait:
-            #     self.riichitile_df.loc[riichi_tile_class, "dorawait"] += 1
-            # self.riichitile_df.loc[riichi_tile_class, "dora"] += dora + len(aka)
-            # if dora + len(aka) >= 2:
-            #     self.riichitile_df.loc[riichi_tile_class, "2dora"] += 1
-            # self.riichitile_df.loc[riichi_tile_class, "totalwidth"] += uke
+            elif riichi_tile < 30 and self.turn >= 12:
+                self.riichitile_thirdrow_df.loc[riichi_tile%10, "count"] += 1
+                for w in wait:
+                    if w > 30:
+                        waittile_class = "Honor"
+                    elif riichi_tile // 10 == w // 10:
+                        waittile_class = w % 10
+                    else:
+                        waittile_class = w % 10 + 10 
+                    self.riichitile_thirdrow_df.loc[riichi_tile%10, waittile_class] += 1
 
-            # if riichi_tile_class == "Honor":
-            #     self.safetile_jointdrop_df.loc[discarded_joints, "count"] += 1
-            #     self.safetile_jointdrop_df.loc[discarded_joints, wait_class] += 1
-            #     if tanyao:
-            #         self.safetile_jointdrop_df.loc[discarded_joints, "tanyao"] += 1
-            #     if dsoba_wait:
-            #         self.safetile_jointdrop_df.loc[discarded_joints, "dorawait"] += 1
-            #     self.safetile_jointdrop_df.loc[discarded_joints, "dora"] += dora + len(aka)
-            #     if dora + len(aka) >= 2:
-            #         self.safetile_jointdrop_df.loc[discarded_joints, "2dora"] += 1
-            #     self.safetile_jointdrop_df.loc[discarded_joints, "totalwidth"] += uke
+            elif riichi_tile < 30:
+                self.riichitile_secondrow_df.loc[riichi_tile%10, "count"] += 1
+                for w in wait:
+                    if w > 30:
+                        waittile_class = "Honor"
+                    elif riichi_tile // 10 == w // 10:
+                        waittile_class = w % 10
+                    else:
+                        waittile_class = w % 10 + 10 
+                    self.riichitile_secondrow_df.loc[riichi_tile%10, waittile_class] += 1
 
-            # self.jointdrop_df.loc[discarded_joints, "count"] += 1
-            # self.jointdrop_df.loc[discarded_joints, wait_class] += 1
-            # if tanyao:
-            #     self.jointdrop_df.loc[discarded_joints, "tanyao"] += 1
-            # if dsoba_wait:
-            #     self.jointdrop_df.loc[discarded_joints, "dorawait"] += 1
-            # self.jointdrop_df.loc[discarded_joints, "dora"] += dora + len(aka)
-            # if dora + len(aka) >= 2:
-            #     self.jointdrop_df.loc[discarded_joints, "2dora"] += 1
-            # self.jointdrop_df.loc[discarded_joints, "totalwidth"] += uke
-
-            # self.riichijoint_df.loc[riichi_joint, "count"] += 1
-            # self.riichijoint_df.loc[riichi_joint, wait_class] += 1
-            # if tanyao:
-            #     self.riichijoint_df.loc[riichi_joint, "tanyao"] += 1
-            # if dsoba_wait:
-            #     self.riichijoint_df.loc[riichi_joint, "dorawait"] += 1
-            # self.riichijoint_df.loc[riichi_joint, "dora"] += dora + len(aka)
-            # if dora + len(aka) >= 2:
-            #     self.riichijoint_df.loc[riichi_joint, "2dora"] += 1
-            # self.riichijoint_df.loc[riichi_joint, "totalwidth"] += uke
-
-            # self.riichi_counts += 1
-            # if tanyao:
-            #     self.riichi_tanyao += 1
-            # if dsoba_wait:
-            #     self.riichi_dorawait += 1
-            # self.riichi_turn += self.turn
-
-            # if tsumogiri:
-            #     self.tsumogiri_counts += 1
-            #     if tanyao:
-            #         self.tsumogiri_tanyao += 1
-            #     if dsoba_wait:
-            #         self.tsumogiri_dorawait += 1
-            #     self.tsumogiri_turn += self.turn
-            #     tsumogiri_reason = TsumogiriSorter(hand, uke, wait, wait_class, tanyao, who, self.round[0], self.oya)
-            #     self.tsumogiri_df.loc[tsumogiri_reason, wait_class] += 1
-            #     self.tsumogiri_totalwidth += uke
-            #     self.tsumogiri_dora += dora + len(aka)
-            #     if dora + len(aka) >= 2:
-            #         self.tsumogiri_2dora += 1
-
-            ## Log
-            # if ((5, 5) in discarded_joints or (4,4) in discarded_joints or (3,3) in discarded_joints) and wait_class == "tanki":
-            #     print(f"Riichi turn {self.turn} Round {self.round[0]}")
-            #     print(f"Hand before: {ut.parseAmberNotation(self.hand_before)}, Shanten/Shape: {shape_before}, Drawn tile: {ut.parseAmberNotation(list=[self.last_draw[who]])}")
-            #     print(f"Discards: {ut.parseAmberNotation(list=self.discards[who])}")
-            #     print(f"Tenpai: {ut.parseAmberNotation(hand)}, Riichi on: {ut.parseAmberNotation(list=[riichi_tile])}, Class: {riichi_tile_class}, Tsumogiri: {tsumogiri}")
-            #     print(f"Wait on: {ut.parseAmberNotation(list=wait)}, Class: {wait_class}, Tanyao: {tanyao}")
-            #     print(f"Dora: {ut.parseAmberNotation(list=self.dora)}, Have # dora: {dora}, Have # aka: {ut.parseAmberNotation(list=aka)}, Dorasoba wait: {dsoba_wait}")
-            #     print(f"Aka discarded: {aka_discarded}, Dora discarded: {dora_discarded}")
-            #     input()
+            if riichi_tile < 30:
+                self.riichitile_urawait_df.loc[riichi_tile%10, ura_wait_class] += 1
+                self.riichitile_urawait_df.loc[riichi_tile%10, "count"] += 1
+                self.turn_urawait_df.loc[self.turn, ura_wait_class] += 1
+                self.turn_urawait_df.loc[self.turn, "count"] += 1
+                
+            # Log
+            # print(f"Riichi turn {self.turn} Round {self.round[0]}")
+            # print(f"Hand before: {ut.parseAmberNotation(self.hand_before)}, Shanten/Shape: {shape_before}, Drawn tile: {ut.parseAmberNotation(list=[self.last_draw[who]])}")
+            # print(f"Discards: {ut.parseAmberNotation(list=self.discards[who])}")
+            # print(f"Tenpai: {ut.parseAmberNotation(hand)}, Riichi on: {ut.parseAmberNotation(list=[riichi_tile])}, Class: {riichi_tile_class}, Tsumogiri: {tsumogiri}")
+            # print(f"Wait on: {ut.parseAmberNotation(list=wait)}, Ura Wait class: {ura_wait_class}, Tanyao: {tanyao}")
+            # print(f"Dora: {ut.parseAmberNotation(list=self.dora)}, Have # dora: {dora}, Have # aka: {ut.parseAmberNotation(list=aka)}, Dorasoba wait: {dsoba_wait}")
+            # print(f"Aka discarded: {aka_discarded}, Dora discarded: {dora_discarded}")
+            # input()
 
             self.end_round = True
 
     def PrintResults(self):
+        self.riichitile_firstrow_df.to_csv(output, mode='a', index_label='first row')
+        self.riichitile_secondrow_df.to_csv(output, mode='a', index_label='second row')
+        self.riichitile_thirdrow_df.to_csv(output, mode='a', index_label='third row')
 
-        print(self.riichitile_df)
-        print(self.jointdrop_df)
-        print(self.safetile_jointdrop_df)
-        print(self.riichijoint_df)
-        self.riichitile_df.to_csv(output, mode='w', index_label='riichitile')
-        self.jointdrop_df.to_csv(output, mode='a', index_label='jointdrop')
-        self.safetile_jointdrop_df.to_csv(output, mode='a', index_label='safetile jointdrop')
-        self.riichijoint_df.to_csv(output, mode='a', index_label='riichi jointdrop')
-
-        # with open(output, "a", encoding="utf8") as f:
-        #     f.write(f"Total riichi count,{self.riichi_counts}\n")
-        #     f.write(f"Total riichi tanyao,{self.riichi_tanyao}\n")
-        #     f.write(f"Total riichi dorawait,{self.riichi_dorawait}\n")
-        #     f.write(f"Total riichi turn,{self.riichi_turn}\n")
-        #     f.write(f"Total tsumogiri count,{self.tsumogiri_counts}\n")
-        #     f.write(f"Total tsumogiri tanyao,{self.tsumogiri_tanyao}\n")
-        #     f.write(f"Total tsumogiri dorawait,{self.tsumogiri_dorawait}\n")
-        #     f.write(f"Total tsumogiri turn,{self.tsumogiri_turn}\n")
+        with open(output, "a", encoding="utf8") as f:
+            f.write(f"Total riichi count,{self.riichi_counts}\n")
+            f.write(f"Total riichi tanyao,{self.riichi_tanyao}\n")
+            f.write(f"Total riichi dorawait,{self.riichi_dorawait}\n")
+            f.write(f"Total riichi turn,{self.riichi_turn}\n")
 
 
 def WaitClass(uke, wait, hand):
@@ -348,3 +306,29 @@ def isYakuhai(tile, who, round, oya):
         yaku += 1
 
     return yaku
+
+def UraWaitSorter(riichi_tile, wait, wait_class):
+    if wait_class == "tanki":
+        if wait[0] // 10 == riichi_tile // 10:
+            if wait[0] <= riichi_tile + 2 and wait[0] >= riichi_tile - 2:
+                return "uratanki"
+    elif wait_class == "shanpon":
+        for w in wait:
+            if w // 10 == riichi_tile // 10:
+                if w <= riichi_tile + 2 and w >= riichi_tile - 2:
+                    return "urashanpon"
+    elif wait_class == "complex":
+        for w in wait:
+            if w // 10 == riichi_tile // 10:
+                if w <= riichi_tile + 2 and w >= riichi_tile - 2:
+                    return "uracomplex"
+    elif wait_class == "kanchan":
+        if wait[0] // 10 == riichi_tile // 10:
+            if wait[0] <= riichi_tile + 2 and wait[0] >= riichi_tile - 2:
+                return "urakanchan"
+    else:
+        if wait[0] < riichi_tile and wait[-1] > riichi_tile:
+            return "matagisuji"
+        if wait[0] == riichi_tile + 1 or wait[-1] == riichi_tile - 1:
+            return "urasuji"
+    return "not ura"

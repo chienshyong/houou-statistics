@@ -18,7 +18,7 @@ with sqlite3.connect(log_database) as conn:
     cursor = conn.cursor()
 
     # Max: 893440
-    rowcount = 40000
+    rowcount = 15000
     cursor.execute(f'SELECT * FROM logs LIMIT {rowcount}')
     #cursor.fetchmany(200)
 
@@ -41,4 +41,4 @@ with sqlite3.connect(log_database) as conn:
                 print(traceback.format_exc())
                 print(f"Error in log {i}: {error}")
 
-    # analyzer.PrintResults()
+    analyzer.PrintResults()
