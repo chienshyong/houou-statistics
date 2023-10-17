@@ -5,8 +5,8 @@ from tqdm import tqdm
 import traceback
 
 # Change this to the analyzer being used
-from analyzers.riichi_tile import RiichiTile
-analyzer = RiichiTile()
+from analyzers.hand_score import HandScore
+analyzer = HandScore()
 
 allowed_types = ["169", "225", "185"] # Not sure what these are but I will leave it
 log_database = r'C:\Users\leecs1\Downloads\es4p.db'
@@ -18,9 +18,9 @@ with sqlite3.connect(log_database) as conn:
     cursor = conn.cursor()
 
     # Max: 893440
-    rowcount = 15000
+    rowcount = 500000
     cursor.execute(f'SELECT * FROM logs LIMIT {rowcount}')
-    #cursor.fetchmany(200)
+    # cursor.fetchmany(1)
 
     for i in tqdm(range(rowcount), ncols=120, disable=False):
         log = cursor.fetchone()
@@ -29,7 +29,7 @@ with sqlite3.connect(log_database) as conn:
         content = decompress(log[2])
         logxml = XML(content, etree.XMLParser(recover=True))
 
-        # with open('data/examplelog3.xml', 'wb') as f:
+        # with open('data/examplelog.xml', 'wb') as f:
         #     str = etree.tostring(logxml, pretty_print=True)
         #     f.write(str)
 

@@ -270,7 +270,7 @@ def CoinflipRatio(round_index, seat_wind, my_score, shimo_score, toimen_score, k
             tsumo_rewards += tsumo[i] * rewards[i]
         print(f"\nTsumo 8000 as dealer")
     else:
-        tsumo = PlacementCalculator(round_index+1, seat_wind, my_score+8000, shimo_score-4000 if dealer == 1 else shimo_score-2000,
+        tsumo = PlacementCalculator(round_index+1, (seat_wind-1)%4, my_score+8000, shimo_score-4000 if dealer == 1 else shimo_score-2000,
                                     toimen_score-4000 if dealer == 2 else toimen_score-2000, kami_score-4000 if dealer == 3 else kami_score-2000)
         tsumo_rewards = 0
         for i in range(4):
@@ -286,7 +286,7 @@ def CoinflipRatio(round_index, seat_wind, my_score, shimo_score, toimen_score, k
             dealin_shimo_rewards += dealin_shimo[i] * rewards[i]
         print(f"\nDeal in 8000 to Shimocha (dealer)")
     else:
-        dealin_shimo = PlacementCalculator(round_index+1, seat_wind, my_score-8000, shimo_score+8000, toimen_score, kami_score)
+        dealin_shimo = PlacementCalculator(round_index+1, (seat_wind-1)%4, my_score-8000, shimo_score+8000, toimen_score, kami_score)
         dealin_shimo_rewards = 0
         for i in range(4):
             dealin_shimo_rewards += dealin_shimo[i] * rewards[i]
@@ -301,7 +301,7 @@ def CoinflipRatio(round_index, seat_wind, my_score, shimo_score, toimen_score, k
             dealin_toimen_rewards += dealin_toimen[i] * rewards[i]
         print(f"\nDeal in 8000 to Toimen (dealer)")
     else:
-        dealin_toimen = PlacementCalculator(round_index+1, seat_wind, my_score-8000, shimo_score, toimen_score+8000, kami_score)
+        dealin_toimen = PlacementCalculator(round_index+1, (seat_wind-1)%4, my_score-8000, shimo_score, toimen_score+8000, kami_score)
         dealin_toimen_rewards = 0
         for i in range(4):
             dealin_toimen_rewards += dealin_toimen[i] * rewards[i]
@@ -316,7 +316,7 @@ def CoinflipRatio(round_index, seat_wind, my_score, shimo_score, toimen_score, k
             dealin_kami_rewards += dealin_kami[i] * rewards[i]
         print(f"\nDeal in 8000 to Kamicha (dealer)")
     else:
-        dealin_kami = PlacementCalculator(round_index+1, seat_wind, my_score-8000, shimo_score, toimen_score, kami_score+8000)
+        dealin_kami = PlacementCalculator(round_index+1, (seat_wind-1)%4, my_score-8000, shimo_score, toimen_score, kami_score+8000)
         dealin_kami_rewards = 0
         for i in range(4):
             dealin_kami_rewards += dealin_kami[i] * rewards[i]
@@ -324,7 +324,7 @@ def CoinflipRatio(round_index, seat_wind, my_score, shimo_score, toimen_score, k
     net_kami_rewards = round(dealin_kami_rewards-current_rewards)
     print(f"Placement prediction: {dealin_kami}, Rewards: {round(dealin_kami_rewards)}, Net: {net_kami_rewards}")
 
-    round_passes = PlacementCalculator(round_index+1, seat_wind, my_score, shimo_score, toimen_score, kami_score)
+    round_passes = PlacementCalculator(round_index+1, (seat_wind-1)%4, my_score, shimo_score, toimen_score, kami_score)
     round_passes_rewards = 0
     for i in range(4):
         round_passes_rewards += round_passes[i] * rewards[i]
@@ -364,15 +364,16 @@ scores = [[25000,25000,25000,25000], # Even points
           [30000,20000,25000,25000], # Small lead
           [40000,20000,20000,20000], # Big lead
           [40000,35000,15000,10000], # 40k but close second
-          [20000,25000,30000,30000], # A bit behind
+          [20000,25000,25000,30000], # A bit behind
           [10000,30000,30000,30000], # Far behind
           [10000,15000,40000,35000], # 10k but close third
+          [24000,26000,25000,25000], # Just 1000 behind
           [25000,30000,25000,20000], # 2nd or 3rd, close points
           [25000,40000,10000,25000], # 2nd or 3rd, 1st and 4th far
           [35000,40000,10000,15000], # 2nd, chasing 1st
           [15000,10000,35000,40000]] # 3rd, avoiding last
 
-for s in scores:
+for s in [scores]:
     for i in [2,4,6]:
         for j in range(2):
-            CoinflipRatio(i,j,s[0],s[1],s[2],s[3])
+            CoinflipRatio(i,j,20000,25000,25000,30000)

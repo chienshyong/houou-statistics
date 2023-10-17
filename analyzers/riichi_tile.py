@@ -115,7 +115,7 @@ class RiichiTile(LogHandAnalyzer):
             ura_wait_class = UraWaitSorter(riichi_tile, wait, wait_class)
             tsumogiri = self.discards[who][-1] == self.last_draw[who]
 
-            First joint that is +- 2 of riichi tile 
+            # First joint that is +- 2 of riichi tile 
             riichi_joint = []
             if riichi_tile < 30 and riichi_tile % 10 <= 5:
                 for i in range(len(self.discards[who])-1,-1,-1):
