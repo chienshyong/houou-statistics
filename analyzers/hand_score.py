@@ -106,13 +106,13 @@ class HandScore(LogHandAnalyzer):
         
         ## Turn
 
-        if who == self.oya:
-            self.dealer_turn_count_df.loc[turn, cat] += 1
-            self.dealer_turn_score_df.loc[turn, cat] += score
-            return
-        else:
-            self.nondealer_turn_count_df.loc[turn, cat] += 1
-            self.nondealer_turn_score_df.loc[turn, cat] += score
+        # if who == self.oya:
+        #     self.dealer_turn_count_df.loc[turn, cat] += 1
+        #     self.dealer_turn_score_df.loc[turn, cat] += score
+        #     return
+        # else:
+        #     self.nondealer_turn_count_df.loc[turn, cat] += 1
+        #     self.nondealer_turn_score_df.loc[turn, cat] += score
 
         ## Dora called
 
@@ -139,42 +139,42 @@ class HandScore(LogHandAnalyzer):
 
         doracalled = 5 if doracalled > 5 else doracalled
             
-        if isTanyao:
+        if isTanyao and len(self.calls[who]) != 0:
             self.tanyao_doracalled_doratype.loc[doracalled, dora] += score
             self.tanyao_doracalled_doratype_count.loc[doracalled, dora] += 1
-        if isYakuhai:
+        if isYakuhai and len(self.calls[who]) != 0:
             self.yakuhai_doracalled_doratype.loc[doracalled, dora] += score
             self.yakuhai_doracalled_doratype_count.loc[doracalled, dora] += 1
 
         ## Dora discarded
 
-        dora_discarded = len(aka_discarded)
-        for idx, d in enumerate(self.discards[who]):
-            if isRiichi and idx == turn: break    #If riichi, only before riichi
-            if d == self.dora[0]:
-                dora_discarded += 1
+        # dora_discarded = len(aka_discarded)
+        # for idx, d in enumerate(self.discards[who]):
+        #     if isRiichi and idx == turn: break    #If riichi, only before riichi
+        #     if d == self.dora[0]:
+        #         dora_discarded += 1
         
-        self.doradiscarded.loc[dora_discarded, cat] += score
-        self.doradiscarded_count.loc[dora_discarded, cat] += 1
+        # self.doradiscarded.loc[dora_discarded, cat] += score
+        # self.doradiscarded_count.loc[dora_discarded, cat] += 1
 
-        ## Deal in tile
-        if isTsumo: return
+        # ## Deal in tile
+        # if isTsumo: return
 
-        if winning_tile in self.dora:
-            machicat = "dora"
-        elif winning_tile > 30:
-            machicat = "honor"
-        elif winning_tile >= self.dora[0] - 2 and winning_tile <= self.dora[0] + 2 and winning_tile // 10 == self.dora[0] // 10:
-            machicat = "dorasoba"
-        elif winning_tile % 10 == 1 or winning_tile % 10 == 9:
-            machicat = "19"
-        elif winning_tile % 10 == 2 or winning_tile % 10 == 8:
-            machicat = "28"
-        else:
-            machicat = "34567"
+        # if winning_tile in self.dora:
+        #     machicat = "dora"
+        # elif winning_tile > 30:
+        #     machicat = "honor"
+        # elif winning_tile >= self.dora[0] - 2 and winning_tile <= self.dora[0] + 2 and winning_tile // 10 == self.dora[0] // 10:
+        #     machicat = "dorasoba"
+        # elif winning_tile % 10 == 1 or winning_tile % 10 == 9:
+        #     machicat = "19"
+        # elif winning_tile % 10 == 2 or winning_tile % 10 == 8:
+        #     machicat = "28"
+        # else:
+        #     machicat = "34567"
 
-        self.dealintile.loc[machicat, cat] += score
-        self.dealintile_count.loc[machicat, cat] += 1
+        # self.dealintile.loc[machicat, cat] += score
+        # self.dealintile_count.loc[machicat, cat] += 1
             
     def PrintResults(self):
         dealer_turn = self.dealer_turn_score_df / self.dealer_turn_count_df
@@ -191,7 +191,9 @@ class HandScore(LogHandAnalyzer):
         tanyao_doracalled = self.tanyao_doracalled_doratype / self.tanyao_doracalled_doratype_count
         yakuhai_doracalled = self.yakuhai_doracalled_doratype / self.yakuhai_doracalled_doratype_count
         tanyao_doracalled.to_csv(output, mode='a', index_label='tanyao doracalled')
+        self.tanyao_doracalled_doratype_count.to_csv(output, mode='a', index_label='tanyao doracalled')
         yakuhai_doracalled.to_csv(output, mode='a', index_label='yakuhai doracalled')
+        self.yakuhai_doracalled_doratype_count.to_csv(output, mode='a', index_label='yakuhai doracalled')
 
         doradiscarded = self.doradiscarded / self.doradiscarded_count
         doradiscarded.to_csv(output, mode='a', index_label='dora discarded')
