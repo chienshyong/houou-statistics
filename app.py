@@ -5,8 +5,8 @@ from tqdm import tqdm
 import traceback
 
 # Change this to the analyzer being used
-from analyzers.betaori_cost import BetaoriCost
-analyzer = BetaoriCost()
+from analyzers.oikake_riichi import OikakeRiichi
+analyzer = OikakeRiichi()
 
 allowed_types = ["169", "225", "185"] # Not sure what these are but I will leave it
 log_database = r'C:\Users\leecs1\Downloads\es4p.db'
@@ -18,7 +18,7 @@ with sqlite3.connect(log_database) as conn:
     cursor = conn.cursor()
 
     # Max: 893440
-    rowcount = 50000
+    rowcount = 200000
     cursor.execute(f'SELECT * FROM logs LIMIT {rowcount}')
     # cursor.fetchmany(1)
 
