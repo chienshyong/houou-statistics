@@ -5,8 +5,8 @@ from tqdm import tqdm
 import traceback
 
 # Change this to the analyzer being used
-from analyzers.oikake_riichi import OikakeRiichi
-analyzer = OikakeRiichi()
+from analyzers.wall_reading import WallReading
+analyzer = WallReading()
 
 allowed_types = ["169", "225", "185"] # Not sure what these are but I will leave it
 log_database = r'C:\Users\leecs1\Downloads\es4p.db'
@@ -18,14 +18,13 @@ with sqlite3.connect(log_database) as conn:
     cursor = conn.cursor()
 
     # Max: 893440
-    rowcount = 200000
+    rowcount = 500
     cursor.execute(f'SELECT * FROM logs LIMIT {rowcount}')
     # cursor.fetchmany(1)
 
     for i in tqdm(range(rowcount), ncols=120, disable=False):
         log = cursor.fetchone()
-        if log is None:
-            break
+        if log is None: break
         content = decompress(log[2])
         logxml = XML(content, etree.XMLParser(recover=True))
 
