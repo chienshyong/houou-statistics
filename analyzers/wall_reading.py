@@ -125,7 +125,6 @@ class WallReading(LogHandAnalyzer):
                 wall_souzu_count += self.wall[i]
 
             if discards_souzu_count > 23: discards_souzu_count = 23
-            if wall_souzu_count > 23: wall_souzu_count = 23
 
             self.souzu_df.loc[self.turn,discards_souzu_count] += wall_souzu_count
             self.souzu_c_df.loc[self.turn,discards_souzu_count] += 1
