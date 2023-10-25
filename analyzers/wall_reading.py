@@ -7,7 +7,7 @@ import pandas as pd
 
 # Let's count the tiles in the wall from 1 player's perspective. Based on 3 players' discards, how many are in my hand + the wall.
 
-output = "./results/WallReading.csv"
+output = "./results/WallReadingDora.csv"
 turns_considered = [4,6,8,10,12,14,16,18]
 
 class WallReading(LogHandAnalyzer):
@@ -94,7 +94,8 @@ class WallReading(LogHandAnalyzer):
             self.nonoya_discards[tile] += 1
 
         if self.turn in turns_considered and who == self.oya:
-            for i in range(38):
+            # for i in range(38):
+            for i in self.dora:
                 if i % 10 == 0: continue
                 if i < 30:
                     cat = i % 10
@@ -118,20 +119,20 @@ class WallReading(LogHandAnalyzer):
                     self.thrice_discarded_df.loc[self.turn, cat] += self.wall[i]
                     self.thrice_discarded_c_df.loc[self.turn, cat] += 1
 
-            discards_souzu_count = 0
-            wall_souzu_count = 0
-            for i in range(1,10):
-                discards_souzu_count += self.nonoya_discards[i]
-                wall_souzu_count += self.wall[i]
+            # discards_souzu_count = 0
+            # wall_souzu_count = 0
+            # for i in range(1,10):
+            #     discards_souzu_count += self.nonoya_discards[i]
+            #     wall_souzu_count += self.wall[i]
 
-            if discards_souzu_count > 23: discards_souzu_count = 23
+            # if discards_souzu_count > 23: discards_souzu_count = 23
 
-            self.souzu_df.loc[self.turn,discards_souzu_count] += wall_souzu_count
-            self.souzu_c_df.loc[self.turn,discards_souzu_count] += 1
+            # self.souzu_df.loc[self.turn,discards_souzu_count] += wall_souzu_count
+            # self.souzu_c_df.loc[self.turn,discards_souzu_count] += 1
 
         if (self.turn == 4 or self.turn == 8) and who == self.oya:
             for i in range(30):
-                if i % 10 == 0: continue
+                if i % 10 == 0 or i > 30: continue
                 if self.nonoya_discards[i] == 1:
                     for j in range((i//10)*10+1,(i//10)*10+10):
                         if self.nonoya_discards[j] == 0:
@@ -161,15 +162,15 @@ class WallReading(LogHandAnalyzer):
         two_d.to_csv(output, mode='a')
         three_d.to_csv(output, mode='a')
 
-        souzu = self.souzu_df/self.souzu_c_df
-        souzu.to_csv(output, mode='a')
-        self.souzu_c_df.to_csv(output, mode='a')
+        # souzu = self.souzu_df/self.souzu_c_df
+        # souzu.to_csv(output, mode='a')
+        # self.souzu_c_df.to_csv(output, mode='a')
 
-        t4_1 = self.turn4_oneneighbor/self.turn4_oneneighbor_c
-        t8_1 = self.turn8_oneneighbor/self.turn8_oneneighbor_c
-        t4_2 = self.turn4_twoneighbor/self.turn4_twoneighbor_c
-        t8_2 = self.turn8_twoneighbor/self.turn8_twoneighbor_c
-        t4_1.to_csv(output, mode='a')
-        t8_1.to_csv(output, mode='a')
-        t4_2.to_csv(output, mode='a')
-        t8_2.to_csv(output, mode='a')
+        # t4_1 = self.turn4_oneneighbor/self.turn4_oneneighbor_c
+        # t8_1 = self.turn8_oneneighbor/self.turn8_oneneighbor_c
+        # t4_2 = self.turn4_twoneighbor/self.turn4_twoneighbor_c
+        # t8_2 = self.turn8_twoneighbor/self.turn8_twoneighbor_c
+        # t4_1.to_csv(output, mode='a')
+        # t8_1.to_csv(output, mode='a')
+        # t4_2.to_csv(output, mode='a')
+        # t8_2.to_csv(output, mode='a')

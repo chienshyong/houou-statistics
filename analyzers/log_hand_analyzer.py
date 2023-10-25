@@ -105,6 +105,10 @@ class LogHandAnalyzer(LogAnalyzer):
         length = len(tiles)
         if length == 1:
             self.hands[who][tiles[0]] -= 1
+            for c in self.calls[who]: # Kakan
+                if c[0] == tiles[0]:
+                    c.append(tiles[0])
+                    return
         elif length == 4:
             self.hands[who][tiles[0]] = 0
         else:
