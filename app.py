@@ -17,7 +17,7 @@ XML = etree.XML
 with sqlite3.connect(log_database) as conn:
     cursor = conn.cursor()
 
-    rowcount = 2500   # Max: 893440
+    rowcount = 15000   # Max: 893440
     cursor.execute(f'SELECT * FROM logs LIMIT {rowcount}')
     # cursor.fetchmany(1)
 
