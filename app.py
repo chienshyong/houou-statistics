@@ -5,8 +5,8 @@ from tqdm import tqdm
 import traceback
 
 # Change this to the analyzer being used
-from analyzers.open_reading import OpenReading
-analyzer = OpenReading()
+from analyzers.dama_winrate import DamaWinrate
+analyzer = DamaWinrate()
 
 allowed_types = ["169", "225", "185"] # Not sure what these are but I will leave it
 log_database = r'C:\Users\leecs1\Downloads\es4p.db'
@@ -17,7 +17,7 @@ XML = etree.XML
 with sqlite3.connect(log_database) as conn:
     cursor = conn.cursor()
 
-    rowcount = 15000   # Max: 893440
+    rowcount = 10000   # Max: 893440
     cursor.execute(f'SELECT * FROM logs LIMIT {rowcount}')
     # cursor.fetchmany(1)
 
