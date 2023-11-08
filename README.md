@@ -48,4 +48,5 @@ Each analyzer inherits `log_hand_analyzer.py`, which includes common functions l
 + **Atozuke**: Chance to complete a yakuhai pair into a triplet depending on the type fo yakuhai and whether you atozuke.
 + **Hand Outcome**: Distribution of hand outcomes (Win by how much, call rate, riichi rate, whether tenpai at draw, deal in %, lateral movement, opponent tsumo) based on round and player's position.
 + **Score Variance**: Standard deviation of final score given current score and rounds left.
++ **All Last 4th**: Chance of getting 4th if you are 3rd or 4th in All Last, depending on the score gap and who is dealer.
 + **Coinflips**: Utility of taking a coinflip (50% to gain 8000, 50% to lose 8000) on rating points based on round and point situation.

@@ -5,8 +5,8 @@ from tqdm import tqdm
 import traceback
 
 # Change this to the analyzer being used
-from analyzers.dama_winrate_by_turn import DamaWinrateByTurn
-analyzer = DamaWinrateByTurn()
+from analyzers.all_last_4th import AllLast
+analyzer = AllLast()
 
 allowed_types = ["169", "225", "185"]
 # log_database = r'C:\Users\leecs1\Downloads\es4p.db'
@@ -17,7 +17,7 @@ XML = etree.XML
 with sqlite3.connect(log_database) as conn:
     cursor = conn.cursor()
 
-    rowcount = 50000  # Max: 893440
+    rowcount = 250000  # Max: 893440
     cursor.execute(f'SELECT * FROM logs LIMIT {rowcount}')
     # cursor.fetchmany(1)
 
