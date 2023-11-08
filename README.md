@@ -1,16 +1,16 @@
 # Houou statistics analyses
 
-Riichi Mahjong data analysis project to gather statistics for improving my play, by looking at thousands of tenhou replays. Forked from https://github.com/Euophrys/houou-analysis.
+Riichi Mahjong data analysis for improving my play by looking at thousands of tenhou replays (4-player hanchan, aka open tanyao). Forked from https://github.com/Euophrys/houou-analysis.
 
 ## Installation
 
 Install requirements with `pip install -r requirements.txt`.
 
-Download database of tenhou logs separately here, and merge together only 4-player hanchans: https://drive.google.com/drive/u/0/folders/1danHelDPYF2YP9Er2HhJCemlVQN25nb_. 
+Download database of tenhou logs separately here, and merge together 4-player hanchans: [2016-2020 Houou Log Database](https://drive.google.com/drive/u/0/folders/1danHelDPYF2YP9Er2HhJCemlVQN25nb_). Place the merged database `es4p.db` in the `data` folder.
 
-Place the merged database in the data folder. From 5 years there are 893,440 logs, but I rarely need more than 20,000 to get a large enough sample size.
+From 5 years there are 893,440 logs, but I rarely need more than 100,000 to get a large enough sample size.
 
-The XML logs format is explained here: https://github.com/ApplySci/tenhou-log#log-format.
+The XML logs format is explained here: [Log Format](https://github.com/ApplySci/tenhou-log#log-format).
 
 ## Contents
 
@@ -26,15 +26,16 @@ Each analyzer inherits `log_hand_analyzer.py`, which includes common functions l
 
 ## List of analyses
 
-+ **Riichi Hand**: Properties of a riichi by turn, riichi tile, discards and tsumogiri riichi: good wait %, tanyao %, amount of dora
++ **Riichi Hand**: Properties of a riichi by turn, riichi tile, discards and tsumogiri riichi: good wait %, tanyao %, amount of dora.
 + **Hand Score**: Average hand scores by yaku, turn, dealin tile, dora discarded and tsumo/ron.
 + **Betaori Cost**: Average points lost upon folding based on turn, number of riichis, and whether you're the dealer.
 + **Wait Distribution**: Distribution of waits for riichi and open hands.
 + **Riichi Tile**: Change in danger level by tile used to call riichi.
 + **Sotogawa**: Change in danger level by tiles discarded prior to riichi.
 + **Dora Danger**: Increase in danger level of dora and tiles close to dora.
-+ **Riichi Winrate**: Win, draw and dealin rates for 1st, 2nd and 3rd riichi based on turn and hand shape.
-+ **Dama Winrate**: Estimating dama winrate by counting tiles discarded without any seemingly dangerous players.
++ **Riichi Winrate**: Winrates for first riichi by wait, turn and suji traps.
++ **Dama Winrate**: Winrates for dama tenpai by wait and turn.
++ **Oikake Winrate**: Win, draw and dealin rates for 1st, 2nd and 3rd riichi based on turn and hand shape.
 + **Oikake Calculator**: EV calculator for chasing a riichi.
 + **1-shanten Calculator**: EV calculator for pushing in 1-shanten against a riichi.
 + **Keiten Calculator**: EV calculator for pushing a no yaku hand to keiten.
