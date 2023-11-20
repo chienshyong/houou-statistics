@@ -40,6 +40,7 @@ Each analyzer inherits `log_hand_analyzer.py`, which includes common functions l
 + **1-shanten Calculator**: EV calculator for pushing in 1-shanten against a riichi.
 + **Keiten Calculator**: EV calculator for pushing a no yaku hand to keiten.
 + **Open Tenpai**: Tenpai chance by number of calls, turn, yaku, kan, type of call, tedashi/tsumogiri, dora discards and joint discards.
++ **Speed Reading**: Judging the chance for a closed opponent to riichi in 3 turns, based on simple suits discarded, early discards, and honor tedashi.
 + **Tedashi Reading**: Tedashi effect on hand shanten and shape, chance that final wait is around previous tedashi, and chance of dora pair given dorasoba tedashi.
 + **Shanten & Width**: Shanten and ukeire of hands based on turn and number of calls.
 + **Projected Winrate**: Projected chance of winning a hand based on shanten, shape, turn, and number of open opponents. Includes EV calculator for opening your hand.

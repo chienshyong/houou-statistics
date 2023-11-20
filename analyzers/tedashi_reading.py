@@ -12,9 +12,9 @@ import csv
 # Wait shifting (improving kanchan to ryanmen) or sliding/karagiri? ✓
 # Dora pair chance based on dorasoba discard ✓
 
-output = "./results/OpenReading.csv"
+output = "./results/TedashiReading.csv"
 
-class OpenReading(LogHandAnalyzer):
+class TedashiReading(LogHandAnalyzer):
     def __init__(self):
         super().__init__()
         self.tedashi = [[], [], [], []]

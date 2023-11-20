@@ -5,19 +5,19 @@ from tqdm import tqdm
 import traceback
 
 # Change this to the analyzer being used
-from analyzers.all_last_4th import AllLast
-analyzer = AllLast()
+from analyzers.speed_reading import SpeedReading
+analyzer = SpeedReading()
 
 allowed_types = ["169", "225", "185"]
-# log_database = r'C:\Users\leecs1\Downloads\es4p.db'
 log_database = 'data\es4p.db'
+# log_database = r'C:\Users\leecs1\Downloads\es4p.db'
 decompress = bz2.decompress
 XML = etree.XML
 
 with sqlite3.connect(log_database) as conn:
     cursor = conn.cursor()
 
-    rowcount = 250000  # Max: 893440
+    rowcount = 10000  # Max: 893440
     cursor.execute(f'SELECT * FROM logs LIMIT {rowcount}')
     # cursor.fetchmany(1)
 
