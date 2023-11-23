@@ -14,7 +14,7 @@ The XML logs format is explained here: [Log Format](https://github.com/ApplySci/
 
 ## Contents
 
-All the results have been compiled into `Houou statistics compiled.xlsx`. Look at this file if you only want to see the statistics.
+All the results have been compiled into `Houou statistics compiled.xlsx`. Look at this file if you only want to see the statistics. For live play, I have compiled useful statistics into `Cheat Sheet.pdf` for easy referencing.
 
 `app.py` is the entry point for the program, change the `Analyzer` in app.py to any analyzer in `/analyzers` to gather data. Raw data are printed into `/results`. Change `rowcount` to adjust the sample size.
 
